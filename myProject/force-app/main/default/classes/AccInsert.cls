@@ -1,4 +1,5 @@
 public class AccInsert {
+    // Added comment for depository
     @AuraEnabled
     public static integer demo1(string acc1)
     {
