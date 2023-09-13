@@ -1,0 +1,5 @@
+<aura:component >
+	<lightning:card title="Leads" iconName="Standerd:lead">
+        
+    </lightning:card>
+</aura:component>

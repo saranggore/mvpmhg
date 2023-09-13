@@ -1,0 +1,20 @@
+<apex:page standardController="Account" recordSetVar="item">
+    <apex:form >
+    	<apex:pageBlock title="Account">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!save}" />
+                <apex:commandButton value="Edit"  action="{!URLFOR($Action.Account.Edit,Account.Id)}"/>
+                <apex:commandButton value="View"  action="{!view}"/>
+                <apex:commandButton value="Delete" action="{!Delete}" />
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+        <apex:pageBlockTable value="{!item}" var="a">
+                <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Industry}"/>
+                </apex:pageBlockTable>
+              
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

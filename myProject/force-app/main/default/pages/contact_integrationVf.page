@@ -1,0 +1,10 @@
+<apex:page controller="contact_integration">
+    <apex:form >
+    <apex:pageBlock >
+    <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Access Token" action="{!send}"/>
+        </apex:pageBlockButtons>
+        {!result}
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

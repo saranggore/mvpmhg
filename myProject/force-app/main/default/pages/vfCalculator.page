@@ -1,0 +1,25 @@
+<apex:page controller="calci">
+    <apex:sectionHeader title="Calculator" subtitle="Advanced Calculator"/>
+    
+    <apex:form >
+        <apex:pageblock title="Title 1">
+            <apex:pageBlockButtons location="Top">
+               <apex:commandButton value="Add" action="{!add}"/>
+               <apex:commandButton value="Subtract" action="{!sub}"/>
+
+            </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Title2">
+            
+            <apex:outputLabel value="Enter A value"/>
+            <apex:inputText value="{!aval}"/>
+            <apex:outputLabel value="Enter B value"/>
+            <apex:inputText value="{!bval}"/>
+            <apex:outputLabel value="Result="/>
+            <apex:inputText value="{!result}"/>
+        </apex:pageBlockSection>
+            
+        </apex:pageblock>
+
+    </apex:form>
+    
+</apex:page>

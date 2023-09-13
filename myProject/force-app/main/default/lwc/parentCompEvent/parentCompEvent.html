@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Child To Parent" icon-name="standard:opportunity">
+        <div class="slds-m-around_medium">
+            Value form Child :{message}
+            
+        </div>
+        <c-child-comp-event onmycustomevent={receiveMessage} ></c-child-comp-event>
+    </lightning-card>
+</template>

@@ -1,0 +1,10 @@
+<!---Vf page for entire apex training--->
+<apex:page standardcontroller="Account" extensions="practiceExample4" >
+   <apex:form >
+      <apex:pageMessages id="AccountId" />
+       Enter Object name:&nbsp;<apex:inputtext value="{!objectName}" /> &nbsp;&nbsp;<br/><br/>
+       Enter Field name :&nbsp;&nbsp;&nbsp;<apex:inputtext value="{!fieldName}" /> &nbsp;&nbsp;<br/><br/>
+         <apex:commandButton value="Search" action="{!nameReturn}"/>
+     
+   </apex:form>
+</apex:page>

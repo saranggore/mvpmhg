@@ -1,0 +1,16 @@
+<apex:page controller="demo3">
+    <apex:form >
+        <apex:pageBlock title="Get News">
+            <apex:pageBlockButtons title="News">
+                <apex:commandButton value="Get News" action="{!fetchmyData}" reRender="myBlock" />
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection id="myBlock" columns="1">
+                <apex:repeat value="{!data}" var="line">
+                    <apex:outputText value="{!line.title}" id="theValue"/>
+                </apex:repeat>
+            </apex:pageBlockSection>
+
+        </apex:pageBlock> 
+    </apex:form>
+</apex:page>

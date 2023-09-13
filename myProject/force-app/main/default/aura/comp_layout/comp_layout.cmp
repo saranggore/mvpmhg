@@ -1,0 +1,36 @@
+<aura:component >
+	<lightning:layout multipleRows="true">
+    <lightning:layoutItem size="12" padding="around-small">
+        <lightning:card title="Invoice Page" iconName="utility:company">
+        <aura:set attribute="actions">
+            <lightning:buttonGroup>
+                <Lightning:button label="New"/>
+                <lightning:button label="Cancel"/>
+                <lightning:button label="Delete"/>
+            </lightning:buttonGroup>
+            </aura:set>
+            Last Name:Gore &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            First Name: Mayur
+        </lightning:card>
+        </lightning:layoutItem>
+        
+     <lightning:layoutItem size="4" padding="around-small">
+         <div class="box">
+             <h1>Account Details</h1>
+         <lightning:input label="Name"/>
+         <lightning:input label="Phone"/>
+         <lightning:input label="Industry"/>
+         <lightning:input label="Rating"/>
+         </div>   
+     </lightning:layoutItem>   
+        <lightning:layoutItem size="8" padding="around-small">
+         <div class="box">
+             <h1>Contact Details</h1>
+         <lightning:input label="LastName"/>
+         <lightning:input label="FIrstName"/>
+         <lightning:input label="Phone"/>
+         <lightning:input label="Email"/>
+         </div>   
+     </lightning:layoutItem>   
+    </lightning:layout>
+</aura:component>

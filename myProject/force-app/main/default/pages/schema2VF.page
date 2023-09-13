@@ -1,0 +1,7 @@
+<apex:page controller="schema2">
+    <apex:pageBlock >
+    <apex:pageBlockTable value="{!demo}" var="a">
+        <apex:column value="{!a}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

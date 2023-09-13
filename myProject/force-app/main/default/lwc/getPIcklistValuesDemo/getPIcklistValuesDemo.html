@@ -1,0 +1,11 @@
+<template>
+   
+        <lightning-card title='Show Picklist Values' icon-name="standard:Account">
+            <lightning-combobox name="Industry" label="Industry" value={picklistValue} placeholder="select"
+            options={IndustryPicklistValues.data.values} onchange={handleChange}
+          ></lightning-combobox>
+          
+          </lightning-card>
+   
+    
+</template>

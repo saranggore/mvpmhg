@@ -1,0 +1,11 @@
+<aura:component>
+    <aura:attribute type="integer" name="input1"  />
+    <aura:attribute type="integer" name="input2" />
+    <lightning:input label="Enter first number" type="number" value="{!v.input1}" required="true"/><br/><br/>
+    <lightning:input label="Enter Second number" type="number" value="{!v.input2}" required="true"/><br/><br/>
+
+    <lightning:button label="Addition" onclick="{!c.addition}"/>
+    <lightning:button label="Subtraction" onclick="{!c.subtraction}"/>
+   
+
+</aura:component>

@@ -1,0 +1,13 @@
+<apex:page controller="doordie" >
+<apex:form >
+<apex:pageBlock title="Accounts and Corrosponding contacts">
+<apex:pageBlockTable value="{!accon}" var="a" >
+ <apex:column >
+<apex:outputText value="{!accon[a].s}" >
+     </apex:outputText>
+ </apex:column>
+</apex:pageBlockTable>
+</apex:pageBlock>    
+</apex:form>
+    
+</apex:page>

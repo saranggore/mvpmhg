@@ -1,0 +1,18 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item  size="6" padding="around-small">
+            <Lightning-card title="Create Contact" icon-name="standard:contact" >
+                <lightning-input label="Enter Name" type="text" onchange={handleName}></lightning-input>
+                <lightning-input label="Enter Phone" type="text" onchange={handlePhone}></lightning-input>
+                <lightning-input label="Enter Email" type="text" onchange={handleEmail}></lightning-input>
+                <lightning-button label="Create Contract" variant="brand" onclick={createRecord}></lightning-button>
+            </Lightning-card>
+        </lightning-layout-item>
+    </lightning-layout>
+    <lightning-layout-item  size="6" padding="around-small">
+        
+    <Lightning-card title="retrived contact">
+         <lightning-formatted-text value={retContactName}></lightning-formatted-text>
+    </lightning-card>
+    </lightning-layout-item>
+</template>

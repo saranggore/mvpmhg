@@ -1,0 +1,22 @@
+<apex:page controller="SchemaDescribeExample">
+<apex:form >
+    <apex:panelGrid columns="1" id="pg" style="width:200px;border:1px;padding:10px;height:300px">
+        <apex:outputPanel >
+            object<br/>
+        <apex:selectList size="1" value="{!selected}">
+        <apex:selectOptions value="{!objectList}"/>
+        <apex:actionSupport event="onchange" action="{!getFields}" rerender="pg"/>
+        </apex:selectList>
+                   </apex:outputPanel>
+      
+        <apex:outputPanel rendered="{!fieldsList.size>1}">
+            fields<br/>
+        <apex:selectList size="10" multiselect="true" value="{!selected}">
+        <apex:selectOptions value="{!fieldsList}"/>
+        </apex:selectList>
+            <apex:commandButton value="FormQuery" action="{!createQuery}" reRender="pg"/>
+        </apex:outputPanel>
+        <apex:inputTextarea rows="3" cols="150" value="{!query}"/>
+    </apex:panelGrid>
+    </apex:form>
+</apex:page>

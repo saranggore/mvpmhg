@@ -1,0 +1,12 @@
+<aura:component controller="getCountryCodee" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+<aura:attribute name="country" type="String" default="US"/>
+    <aura:attribute name="countryOptions" type="List" default="[]"/>
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <lightning:inputAddress
+           
+            countryLabel="Country"
+            country="{! v.country }"
+            countryOptions="{! v.countryOptions }"
+            
+        />
+</aura:component>

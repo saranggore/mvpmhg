@@ -1,0 +1,12 @@
+<template>
+    <Lightning-card title="PIcklist values of field">
+        <lightning-combobox
+        name="Industry"
+        label="Industry"
+        value={selectedIndustry}
+        placeholder="Select Industry"
+        options={industryOptions}
+        onchange={handleChange} ></lightning-combobox>
+<p>Selected Industry:{selectedIndustry}</p>
+    </Lightning-card>
+</template>

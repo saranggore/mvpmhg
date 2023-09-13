@@ -1,0 +1,42 @@
+<aura:component controller="returnAge">
+    <aura:attribute name="Name" type="string"/>
+    <aura:attribute name="Phone" type="string"/>
+    <aura:attribute name="Industry" type="string"/>
+    <aura:attribute name="Rating" type="string"/>
+    <aura:attribute name="result" type="string"/>
+    <aura:attribute name="flag" type="Boolean" default="false"/>
+    <lightning:card title="Account" iconName="standard:account">
+    <aura:set attribute="title">
+        <h3>Account</h3>
+        <p>New Account</p>
+        </aura:set>
+        <aura:set attribute="actions">
+            <lightning:button label="Save" onclick="{!c.save}"/>
+            <lightning:button label="Action"/>
+        </aura:set>
+        <lightning:layout multipleRows="true">
+            <div class="box1">
+        <lightning:layoutItem>
+            <lightning:input label="Name" name="Name" type="String" value="{!v.Name}"/> 
+            <lightning:input label="Phone" name="Phone" type="String" value="{!v.Phone}"/>
+            <lightning:input label="Industry"  name="Industry" type="String" value="{!v.Industry}"/>
+            <lightning:input label="Rating" name="Rating" type="String" value="{!v.Rating}"/>
+        </lightning:layoutItem>
+          </div>     
+        
+            
+        <lightning:layoutItem>
+        <div class="box1">
+        Result:{!v.result}<br/>
+        Name: {!v.Name}<br/>
+        Phone:{!v.Phone}<br/>
+        Industry:{!v.Industry}<br/>
+        Rating:{!v.Rating}<br/> 
+             </div>
+        </lightning:layoutItem><br/>    
+               
+          
+        </lightning:layout>
+    </lightning:card>
+    
+</aura:component>

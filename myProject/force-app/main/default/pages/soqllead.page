@@ -1,0 +1,11 @@
+<apex:page controller="leadsoql">
+<apex:pageBlock title="Lead Information">
+    <apex:pageBlockTable value="{!customer}" var="a">
+        <apex:column value="{!a.Name}"/>
+        <apex:column value="{!a.company}"/>
+        <apex:column value="{!a.title}"/>
+        <apex:column value="{!a.email}"/>
+        <apex:column value="{!a.phone}"/>
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

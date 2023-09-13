@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+ 
+    <aura:attribute name="FirstNumber" type="double"/>
+    <aura:attribute name="SecondNumber" type="double"/>
+     <aura:attribute name="Result" type="double"/>
+    <aura:attribute name="Subtract" type="double"/>
+    <aura:attribute name="Multiplication" type="double"/>
+    <aura:attribute name="Division" type="double"/>
+    <lightning:input name="input1" label="First Number" value="{!v.FirstNumber}"></lightning:input>
+    <lightning:input name="input2" label="Second Number" value="{!v.SecondNumber}"></lightning:input>
+    <lightning:button label="Add" variant="Brand" onclick="{!c.add}"/>
+    <lightning:button label="Subtract" variant="Brand" onclick="{!c.sub}"/>
+    <lightning:button label="Multiply" variant="Brand" onclick="{!c.mul}"/>
+    <lightning:button label="Divide" variant="Brand" onclick="{!c.div}"/><br/>
+    Addition Result is {!v.Result}<br/>
+    Subtraction Result is {!v.Subtract}<br/>
+    Multiplication Result is {!v.Multiplication}<br/>
+    Division Result is {!v.Division}<br/>
+   
+</aura:component>

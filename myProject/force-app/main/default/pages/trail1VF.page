@@ -1,0 +1,17 @@
+<apex:page controller="trial1vfController">
+    <apex:form >
+      <apex:sectionHeader title="Account" subtitle="Records"/>
+        <apex:pageBlock title="Account Edit">
+        <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Save" action="{!demo1}"/>   
+        <apex:commandButton value="Edit"/>    
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection >
+        Name:<apex:inputText value="{!name}"/>
+       
+        </apex:pageBlockSection>  
+           
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

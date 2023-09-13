@@ -1,0 +1,3 @@
+<design:component>
+<design:attribute name="aura_id_assign" label="Id of the New Record" />
+</design:component>

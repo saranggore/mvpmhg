@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Conditional rendering" icon-name="custom:customicon2">
+        <div class="slds-m-around_medium">
+            <lightning-input name="enter" type="text" label="Enter text" onkeyup={changeHandler} value={inputtext}></lightning-input>
+ 
+        </div>
+        <template if:true={checktext}>
+<h3>Hello Salesforce troops</h3>
+        </template>
+     </lightning-card>
+</template>

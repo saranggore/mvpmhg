@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable" >
+	<aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    
+    <aura:handler name="first" event="c:Account_event" action="{!c.callMe}"/>
+     
+    <div style="height: 300px">
+        <lightning:datatable
+                keyField="Id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+               hideCheckboxColumn="true"/>
+    </div>
+</aura:component>

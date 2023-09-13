@@ -1,0 +1,2 @@
+<apex:page standardController="lead" extensions="delete_leads" recordSetVar="item" action="{!callMe}">
+</apex:page>

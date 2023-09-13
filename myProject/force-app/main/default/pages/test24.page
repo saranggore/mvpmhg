@@ -1,0 +1,3 @@
+<apex:page controller="test23">
+    <apex:pageMessages />
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page standardController="Account" showHeader="true">
+    <apex:pageBlock title="General Information" helpUrl="https://www.google.com/" helpTitle="Contact Detail">
+        <apex:pageBlockSection title="Registration Information">
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Basic Information" columns="2">
+            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

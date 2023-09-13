@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Wire Apex Example" >
+        <div class="slds-p-around_medium">
+        <lightning-combobox
+           name="Industry"
+           label="Industry"
+           value={value}
+           options={indusValues}
+           onchange={handleSelect}>
+        </lightning-combobox>
+    </div>
+    <div if:true={display}>
+    <template for:each={showAccount} for:item="acc">
+       <div key={acc.Id}>
+        Account Name: {acc.Name}
+       </div>
+    </template>
+</div>
+<div if:false={display}>
+    No Account for selected Industry 
+</div>
+    </lightning-card>
+</template>

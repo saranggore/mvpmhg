@@ -1,0 +1,15 @@
+<template>
+    <Lightning-card title="Account Contact Form">
+        <lightning-input label="Account Name"  
+                         onchange={handlevalue} 
+                         name="Aname" 
+                         value={name} >
+        </lightning-input>
+        <lightning-input label="Contact Name"  
+                         onchange={handlevalue} 
+                         name="Cname" 
+                         value={name} >
+        </lightning-input>
+        <Lightning-button label="Save" variant="Brand" onclick={handleSave} ></Lightning-button>
+    </Lightning-card>
+</template>

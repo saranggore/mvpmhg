@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="AssignPermissionSetToProfile">
+    <aura:attribute name="Profile" type="string"/>
+    <aura:attribute name="Permissionset" type="string"/>
+    <lightning:card>
+    <lightning:input  label="Select Profile" value="{!v.Profile}" />
+    <Lightning:input  label="Seelct Permission set" value="{!v.Permissionset}"/>
+    <lightning:button name="Assign Permission set to profile" label="Assign Permission set to profile" onclick="{!c.Assign}"/>
+</lightning:card>
+    </aura:component>

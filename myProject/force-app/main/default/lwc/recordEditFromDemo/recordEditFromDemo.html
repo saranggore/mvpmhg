@@ -1,0 +1,37 @@
+<template>
+
+    <lightning-card>
+        <lightning-record-form
+        object-api-name={objectApiName}
+        fields={fieldName}
+        onsuccess={handleSuccess}
+        >
+    
+        </lightning-record-form>
+    </lightning-card>
+
+    <lightning-card>
+        <lightning-record-form
+        record-id="0012v00003BrRN9AAN"
+        object-api-name={objectApiName}
+        fields={fieldName}
+        onsuccess={handleSuccess}
+        mode="read"
+        >
+    
+        </lightning-record-form>
+    </lightning-card>
+    <lightning-card>
+        <lightning-record-form
+        record-id="0012v00003BrRN9AAN"
+        object-api-name={objectApiName}
+        fields={fieldName}
+        onsuccess={handleSuccess}
+        mode="edit"
+        columns="2"
+        >
+    
+        </lightning-record-form>
+    </lightning-card>
+    
+</template>

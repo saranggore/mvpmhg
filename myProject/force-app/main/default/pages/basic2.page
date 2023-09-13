@@ -1,0 +1,9 @@
+<apex:page standardController="Account" recordSetVar="items">
+    <apex:pageBlock title="Account Table">
+    <apex:pageBlockTable value="{!items}" var="show">
+        <apex:column value="{!show.Name}"/>
+        <apex:column value="{!show.Type}"/>
+        <apex:column value="{!show.Industry}"/>
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page controller="drerere" >
+<apex:form >
+    <apex:inputText value="{!searchtext}"/>
+    <apex:commandButton value="Search" action="{!callMe}"/>
+    <apex:dataTable value="{!acc}" var="a" cellpadding="10" rules="columns, rows" rendered="{!!ISNULL (acc)}" frame="border">
+        <apex:column value="{!a.Name}" headervalue="Name"/>
+        <apex:column value="{!a.Phone}" headervalue="Phone"/>
+        <apex:column value="{!a.Industry}" headervalue="Industry"/>
+        <apex:column value="{!a.Rating}" headervalue="Rating"/>
+    </apex:dataTable>
+    </apex:form>   
+</apex:page>

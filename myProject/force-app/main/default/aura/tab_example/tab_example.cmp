@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:attribute name="colors" type="string[]" default="Red,Green,Blue"/>
+    <lightning:select label="Alphabet">
+    <aura:iteration items="{!v.colors}" var="a">
+    <option>{!a}</option>
+    </aura:iteration>    
+    </lightning:select>
+</aura:component>

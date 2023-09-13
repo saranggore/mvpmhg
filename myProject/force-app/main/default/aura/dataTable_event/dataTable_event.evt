@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template" >
+    <aura:attribute name="recId" type="Id"/>
+    <aura:attribute name="myMode" type="String"/>
+</aura:event>

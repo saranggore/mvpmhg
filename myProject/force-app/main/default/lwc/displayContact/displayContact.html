@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-05-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Contact List">
+
+        <template for:each={contactFetched} for:item="item">
+          <div key={item.id}>
+                 <p>Contact Name:{item.Name}</p>
+                 <p>Contact Email:{item.Email}</p>
+                 <p>Contact Phone:{item.Phone}</p>
+
+          </div>
+
+        </template>
+    </lightning-card>
+</template>

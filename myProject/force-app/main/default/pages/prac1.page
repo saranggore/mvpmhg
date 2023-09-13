@@ -1,0 +1,5 @@
+<apex:page >
+    <apex:pageBlock >
+    <apex:outputLink value="https://trailhead.salesforce.com/en/content/learn/modules/visualforce_fundamentals/visualforce_static_resources"/>
+</apex:pageBlock>
+</apex:page>

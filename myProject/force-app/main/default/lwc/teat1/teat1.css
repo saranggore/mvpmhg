@@ -1,0 +1,9 @@
+.OuterClass{
+    color:green;
+    font-weight: bold;
+}
+.InnerClass{
+    border-top: 1px solid #ccc;
+    width:100%;
+    color:red;
+}

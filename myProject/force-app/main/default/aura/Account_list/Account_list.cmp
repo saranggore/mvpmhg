@@ -1,0 +1,14 @@
+<aura:component >
+    <aura:attribute name="accounts" type="List" default="[]"/>
+    <aura:attribute name="fields" type="List" />
+    <aura:handler name="init" value="{!this}" action="{!c.callMe}"/>
+    <aura:handler name="satish" event="c:Account_add" action="{!c.show}"/>
+    <div>
+    <c:New_Account/>
+        <br/><br/>
+    <lightning:datatable keyField="id"
+                         data="{!v.accounts}"
+                         columns="{!v.fields}"
+                         hideCheckboxColumn="false"/>
+        </div>
+</aura:component>

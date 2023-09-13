@@ -1,0 +1,24 @@
+<apex:page standardController="Lead"  extensions="lead_button_extension">
+    <apex:form >
+        <apex:sectionHeader title="Adding contact "/>
+    <apex:pageBlock title="{!lead.Name}">
+        <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Create contact" action="{!callMe}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection >
+        
+            <apex:inputField value="{!lead.Name}"/>
+            <apex:inputField value="{!lead.company}"/>
+            <apex:inputField value="{!lead.email}"/>
+            <apex:inputField value="{!lead.phone}"/>
+            <apex:inputField value="{!lead.rating}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Contact">
+            <apex:inputField value="{!con.FirstName}"/>
+            <apex:inputField value="{!con.LastName}"/>
+            <apex:inputField value="{!con.Phone}"/>
+            <apex:inputField value="{!con.Email}"/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

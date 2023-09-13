@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Opportunity Team" icon-name="standard:opportunity">
+        <lightning-layout multiple-rows="true">
+            <template for:each={mapData} for:item="map">
+               
+                    <div key={map.key}>
+                        
+                            <lightning-layout-item padding="arount-small" size="6">
+                            <div class="slds-p-around_medium slds-text-align_center">{map.key}<br/>{map.value}</div>
+                        </lightning-layout-item>
+                        
+                    </div>
+                
+            </template>
+        </lightning-layout>
+    </lightning-card>
+</template>

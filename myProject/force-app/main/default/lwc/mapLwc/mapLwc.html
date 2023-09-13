@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Select Operations">
+        <lightning-button label="Simple Map" onclick={handleSimpleMap} ></lightning-button>
+    </lightning-card>
+    <lightning-card  if:true={returnMapArray} title="Iterate Map" >
+            <template for:each={returnMapArray} for:item="item">
+                <div key={item.key}>
+                    {item.key} : {item.value}
+                </div>
+            </template>
+    </lightning-card>
+</template>

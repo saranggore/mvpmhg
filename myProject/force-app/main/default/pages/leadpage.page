@@ -1,0 +1,99 @@
+<apex:page standardController="Lead" recordSetVar="iteam" >
+<apex:form >
+    <apex:sectionHeader title="Leads" subtitle="Home" help="Tell me more Help for this page">
+       &nbsp; <apex:outputText value="View:"/>&nbsp;&nbsp;
+        <apex:selectList value="{!filterid}" size="1">
+            <apex:selectOptions value="{!listviewoptions}"/>
+           
+        </apex:selectList>
+        &nbsp;<apex:commandButton Value="Go!" action="{!list}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:commandLink Value="Edit" />&nbsp;|&nbsp;
+        <apex:commandLink Value="Create New View"/><br/><br/>
+    </apex:sectionHeader>
+    <apex:pageBlock title="Recent Leads"  tabstyle="lead">
+        <apex:pageBlockButtons location="top">
+        <apex:commandButton value="New"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <apex:selectList size="1">
+            <apex:selectOption itemLabel="Recently Viewed" itemValue="RV"/>
+            <apex:selectOption itemLabel="Recently created" itemValue="Rc"/>
+            <apex:selectOption itemLabel="My Unread leads" itemValue="MUL"/>
+        </apex:selectList>    
+        </apex:pageBlockButtons>
+        
+            <apex:pageBlockTable value="{!iteam}" var="a" rows="10" >
+                <apex:column headervalue="Name">
+                <apex:commandLink value="{!a.Name}" action="{!URLFOR($Action.lead.view,a.id)}" />
+                </apex:column>    
+           
+            <apex:column headervalue="company">
+            <apex:commandLink value="{!a.Company}" action="{!URLFOR($Action.lead.view,a.id)}" />
+            </apex:column>    
+            
+            <apex:column value="{!a.phone}"/>
+            </apex:pageBlockTable>
+        
+        <apex:pageBlockSection columns="2">
+            	
+        <apex:pageBlock title="Reports" >
+                
+           <apex:outputLink >
+           <a href="/00O?rt=28&retURL=%2F00Q%2Fo&scope=user&sdate=3%2F1%2F2020&s=AM&c=CD&c=LS&c=FN&c=LN&c=LU&c=CA&c=CND&c=SU&c=OW&c=OP&c=OA&c=CLD&c=OO&details=yes"> Lead Lifetime</a> </apex:outputLink> <br/><br/>
+       
+            <apex:outputLink >
+            <a href="/00O?rt=20&retURL=%2F00Q%2Fo&function=c&date=d&break0=LEAD_SOURCE&new_break=LEAD_SOURCE&pivot=STATUS&scope=user&colDt=CREATED_DATE&sdate=3%2F1%2F2020&hidden=STREET_LINE1&hidden=STREET_LINE2&hidden=STREET_LINE3&hidden=ANNUAL_REVENUE.CONVERT&t=title_LeadsBySourceReport&details=no&format=t">
+        Lead By Source </a> </apex:outputLink> <br/><br/>
+       
+        <apex:outputLink ><a href="/00O?rt=21&retURL=%2F00Q%2Fo&pc0=EMAIL_BOUNCED_REASON&pn0=ne&pv0=&sort=EM&c=FN&c=LN&c=CO&c=EM&c=OW&c=EMAIL_BOUNCED_REASON&c=EMAIL_BOUNCED_DATE&details=yes">
+            Bounced Leads </a></apex:outputLink><br/><br/>
+            
+        <apex:outputLink value="Go to Reports>>"> <a href="/00O/o?entityType=00O">Go to Reports>></a>
+         </apex:outputLink>   
+        
+        </apex:pageBlock>
+   
+       <apex:pageblock title="Summary">
+ 
+        <apex:outputText value="Interval:"/>&nbsp;&nbsp;
+        <apex:outputText value="From:"/>&nbsp;&nbsp;
+        <apex:inputText size="11" /><br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <apex:outputLabel value="To:"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <apex:inputText size="11"  />
+        <br/><br/>
+       &nbsp; View:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <apex:selectList size="1">
+            <apex:selectOption itemLabel="My Leads" itemValue="Ml"/>
+            <apex:selectOption itemLabel="My Team's Leads" itemValue="MTl"/>
+            <apex:selectOption itemLabel="All Leads" itemValue="Al"/>
+           </apex:selectList> <br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <apex:commandButton value="Run Report"/>
+      
+    </apex:pageblock>
+      
+            
+            
+    <apex:pageBlock title="Tools">
+        <apex:commandLink value="Import Leads"/><br/><br/>
+        <apex:commandLink value="Mass Delete Leads"/><br/><br/>
+        <apex:commandLink value="Transfer Leads"/><br/><br/>
+         <apex:commandLink value="Mass Email Leads"/><br/><br/>
+         <apex:commandLink value="Mass add Leads to campaign"/><br/><br/>
+    </apex:pageBlock>
+
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <style>
+.header{background: #FFFFFF}
+</style>
+    
+    </apex:form>
+</apex:page>

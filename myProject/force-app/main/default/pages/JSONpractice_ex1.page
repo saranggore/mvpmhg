@@ -1,0 +1,16 @@
+<apex:page controller="JSON_practice">
+   <apex:form >
+    <apex:pageBlock title="JSON-Example_2">
+        <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Submit" action="{!crate}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection >
+                    <apex:inputText value="{!acc.name}"/>
+                    <apex:inputText value="{!acc.phone}"/>
+                    <apex:inputText value="{!acc.rating}"/>
+                    <apex:inputText value="{!acc.Industry}"/>
+            </apex:pageBlockSection>
+        {!jsonstring}
+       </apex:pageBlock>
+    </apex:form>
+</apex:page>

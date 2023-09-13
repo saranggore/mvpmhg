@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Contact Filtering">
+        <lightning-layout >
+
+            <lightning-layout-item size="4" padding="around-small">
+              <lightning-combobox
+                label="Selet"
+                options={filterbyOprionss}
+                value={filterby}
+                onchange={filterHandler}
+              ></lightning-combobox>
+            </lightning-layout-item>
+            
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-input label="Search Contact" value={searchc} onchange={searchContact} ></lightning-input>
+            </lightning-layout-item>
+        
+        </lightning-layout>
+       
+    <table>
+        <thead>
+          <tr>
+            <template for:each={theader} for:item="item">
+                <th key={item}>{item}</th>
+             </template>   
+          </tr>
+        </thead>
+        
+        <tbody>
+            <template for:each={filteredData} for:item="items">
+                    <tr key={items.Id}>
+                        <td>{items.Id}</td>
+                        <td>{items.Name}</td>
+                        <td>{items.Email}</td>
+                    </tr>
+            </template>  
+        </tbody>
+    </table>
+  </lightning-card>
+</template>

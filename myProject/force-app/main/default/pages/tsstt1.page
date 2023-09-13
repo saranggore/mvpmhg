@@ -1,0 +1,15 @@
+<apex:page standardController="Lead" recordSetVar="item">
+    <apex:pageBlock title="Demo">
+    <apex:pageBlockTable value="{!item}" var="a">
+        <apex:column value="{!a.Name}" />
+        </apex:pageBlockTable>
+        <table>
+            <tr>
+            <td>
+                Page:<apex:outputText value="{!PageNumber} of {!ceiling (ResultSize/PageSize)}" />    
+            
+            </td>
+            </tr>
+        </table>
+    </apex:pageBlock>
+</apex:page>

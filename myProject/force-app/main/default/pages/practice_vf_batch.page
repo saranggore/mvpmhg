@@ -1,0 +1,5 @@
+<apex:page standardController="Account" extensions="extension_batch" >
+    <apex:form >
+    <apex:commandButton value="Start Batch Action" action="{!batchExample}"/>
+    </apex:form>    
+</apex:page>

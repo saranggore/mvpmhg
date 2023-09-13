@@ -1,0 +1,13 @@
+<aura:component >
+    <aura:attribute name="newAccount" type="Account" default="{'sobjectType':'Account'}"/>
+    <aura:registerEvent name="satish" type="c:Add_Event"/>
+    <lightning:card title="Acccount">
+    <aura:set attribute="actions">
+        <lightning:button label="Add" onclick="{!c.addMe}"/>
+        </aura:set>
+    </lightning:card>
+    <lightning:input label="Account Name" value="{!v.newAccount.Name}"/>
+    <lightning:input label="Account Phone" value="{!v.newAccount.Phone}"/>
+    <lightning:input label="Account Industry" value="{!v.newAccount.Industry}"/>
+    <lightning:input label="Account Rating" value="{!v.newAccount.Rating}"/>
+</aura:component>

@@ -1,0 +1,28 @@
+<apex:page controller="Add_contacts">
+    <apex:sectionHeader title="Account" subtitle="New Account" />
+    <apex:form >
+        <apex:pageMessages />
+    	<apex:pageBlock title="Acccount-Contact">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Create" />
+            </apex:pageBlockButtons>
+        
+            <apex:pageBlockSection columns="1" collapsible="false" title="Contact" id="pbs">
+            	<apex:dataTable value="{!contacts}" var="a" cellpadding="10" rules="rows"  width="900">
+                	<apex:column >
+                        LastName : <apex:inputText value="{!a.lastName}" />
+                    </apex:column>
+                    <apex:column >
+                        FirstName : <apex:inputText value="{!a.firstName}" />
+                    </apex:column>
+                    <apex:column >
+                        Phone : <apex:inputText value="{!a.phone}" />
+                    </apex:column>
+                    <apex:column >
+                        <apex:commandButton value="add" action="{!addContact}" reRender="pbs" />
+                    </apex:column>
+                </apex:dataTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

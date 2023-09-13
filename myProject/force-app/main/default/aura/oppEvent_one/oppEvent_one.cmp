@@ -1,0 +1,8 @@
+<aura:component controller="returnOppo">
+    <aura:attribute name="accName" type="string"/>
+    <aura:attribute name="accIndustry" type="string"/>
+    
+    <lightning:input label="Name" value="{!v.accName}"/>
+    <lightning:input label="Industry" value="{!v.accIndustry}"/>
+    <lightning:button label="Submit" onclick="{!c.search}"/>
+</aura:component>

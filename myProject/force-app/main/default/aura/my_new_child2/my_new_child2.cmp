@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:attribute name="contact" type="List" default="[]"/>
+    <aura:attribute name="fields" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.demo}"/>
+    <aura:handler name="Mayur" event="c:my_new" action="{!c.demo2}"/>
+  
+    <br/><br/>
+    <c:my_new_child1/>
+    <br/><br/>
+    <lightning:datatable keyField="id"
+                         data="{!v.contact}"
+                         columns="{!v.fields}"
+                         hideCheckboxColumn="false"/>
+        
+</aura:component>

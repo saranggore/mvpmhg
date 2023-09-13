@@ -1,0 +1,207 @@
+<template>
+<div class="slds-box">
+    <lightning-card  icon-name="standard:account">
+        <h3 slot="title" >{title}</h3>
+            <lightning-button-menu slot="actions" alternative-text="Show menu" variant="border-filled"  icon-size="x-small">
+                <lightning-menu-item value="MenuItemOne" label="Add Product" onclick={openModal}></lightning-menu-item>
+                <lightning-menu-item value="MenuItemTwo" label="Edit Product" onclick={openModalEditProduct}></lightning-menu-item>
+                <lightning-menu-item value="MenuItemTwo" label="Choose Pricebook" onclick={openChoosePricebook}></lightning-menu-item>
+                <lightning-menu-item value="MenuItemTwo" label="Sort Products" onclick={SortProducts} ></lightning-menu-item>
+            </lightning-button-menu>
+        
+            <template for:each={dataTodisp} for:item="item">
+                <div key={item.id}>
+                   <lightning-card>
+    <p><lightning-formatted-url value="https://salesforce.com" tooltip="Use https://domain-name" label={item.Product2.Name} target="_blank" ></lightning-formatted-url></p>
+       
+                    
+                    <div >
+                        <div class="slds-float_right">
+                        <lightning-button-menu slot="actions" alternative-text="Show menu" variant="border" icon-size="x-small">
+                            <lightning-menu-item value="MenuItemOne" label="Edit"></lightning-menu-item>
+                            <lightning-menu-item value="MenuItemTwo" label="Delete" ></lightning-menu-item>
+                        </lightning-button-menu>
+                    </div>
+                </div>
+                        
+                        Quantity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{item.Quantity}<br/>
+                        Sales Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{item.UnitPrice}<br/>
+                        Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{item.ServiceDate}<br/><br/>
+                    </lightning-card>
+                </div>
+            </template>
+            
+       
+    </lightning-card>
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Add Products</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <c-search-prod pricebookidfromopp={pbid}></c-search-prod>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={submitDetails} title="Next">Next</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+
+    <template if:true={isSecondModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Edit Selected Products</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                    
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={submitDetails} title="Next">Next</button>
+                    <button class="slds-button slds-button_neutral slds-float_left" onclick={backbutton} title="Back">Back</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template if:true={isModalOpenEditButton}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModalEditProduct}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-03" class="slds-text-heading_medium slds-hyphenate">Edit All Products</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-3">
+                    <lightning-datatable
+                    key-field='Id'
+                    data={dataTodisp}
+                    columns={columns}
+                    hide-checkbox-column
+                    draft-values={saveDraftValues}
+                   onsave={handleSave}
+                   >
+            </lightning-datatable>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here 
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModalEditProduct} title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={handleSave} title="Save">Save</button>
+                </footer>  -->
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+
+
+    <template if:true={isSortProducts}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeSortProducts}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-04" class="slds-text-heading_medium slds-hyphenate">Sort Products</h2><br/><br/>
+                    <h3>Drag the items into the order you want, and save.</h3>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+              
+            </lightning-datatable>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeSortProducts} title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={saveSortProducts} title="Save">Save</button>
+                </footer>  
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template if:true={isopenChoosePricebook}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeChoosePricebook}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-05" class="slds-text-heading_medium slds-hyphenate" >Choose Pricebook</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-5">
+                <p>Select a Price Book to associate with this opportunity. You can add products only from the Price Book you associate with this opportunity. Changing the Price Book deletes all products from the opportunity.
+                </p>
+                        <lightning-combobox
+                                name="PriceBook"
+                                label="Price Book"
+                                value={selectedValue}
+                                placeholder="Select Progress"
+                                options={picklistOptions}
+                                onchange={handlePricebook}
+                        ></lightning-combobox><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    </div>
+                    
+                
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeChoosePricebook} title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={updatePricebook} title="Save">Save</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    
+</div>
+    
+</template>

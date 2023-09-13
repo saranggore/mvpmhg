@@ -1,0 +1,3 @@
+<aura:component >
+    <aura:registerEvent name="child1" type="c:Evenr1"/>
+</aura:component>

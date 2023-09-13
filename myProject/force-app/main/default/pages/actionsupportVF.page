@@ -1,0 +1,12 @@
+<apex:page controller="actionsprtapex" >
+<apex:form >
+<apex:pageblock >
+<apex:outputPanel >
+    <apex:outputText value="clickMe"/>
+    <apex:actionSupport event="onclick" action="{!doit}" rerender="out"/>
+   
+    </apex:outputPanel>    
+     <apex:outputText value="{!count}" id="out" label="Counter Is:"/>
+</apex:pageblock>    
+</apex:form>
+</apex:page>

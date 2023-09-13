@@ -1,0 +1,82 @@
+<apex:page standardController="lead" recordSetVar="item"  docType="html-5.0">
+<apex:form >
+    <apex:sectionHeader title="Lead" subtitle="Home" help="Tell me More!|Help for this Page"/>
+    <apex:outputLabel value="View:"/>
+            <apex:selectList value="{!filterid}" size="1">
+            <apex:selectOptions value="{!listviewoptions}"/>           
+        </apex:selectList>
+
+   &nbsp;&nbsp;&nbsp; <apex:commandButton value="Go! "/>&nbsp;&nbsp;&nbsp;
+    <apex:commandLink value="Edit |" action="{!URLFOR($Action.lead.edit)}"/>
+    <apex:commandLink value="Create New View" action="{!URLFOR($Action.lead.edit)}"/>	<br/><br/>
+    
+    
+    <apex:pageBlock title="Recent Leads">
+        <apex:pageBlockButtons location="top">
+        <apex:commandButton value="New" />
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            
+    <apex:selectList size="1" >  
+          <apex:selectoption itemlabel="Recently created" itemvalue="Recently created"/>
+          <apex:selectoption itemlabel="My Unread Leads" itemvalue="My Unread Leads"/>
+          <apex:selectoption itemlabel="Recently viewed" itemvalue="Recently viewed"/>
+        
+        </apex:selectList>
+        </apex:pageBlockButtons>
+      <apex:pageBlockTable value="{!item}" var="a">
+        <apex:column >
+            <apex:commandLink value="{!a.Name}" action="{!URLFOR($Action.Lead.View,a.id)}"/>
+          </apex:column>
+          <apex:column >
+          <apex:commandLink value="{!a.Company}" action="{!URLFOR($Action.Lead.View,a.id)}"/>
+          </apex:column>
+          <apex:column value="{!a.Phone}"/>
+        </apex:pageBlockTable>
+       <apex:pageBlockSection columns="2">
+        <apex:pageBlock title="Reports" >
+     
+         <a href="https://ap15.salesforce.com/00O?rt=28&retURL=%2F00Q%2Fo&scope=user&sdate=12%2F04%2F2020&s=AM&c=CD&c=LS&c=FN&c=LN&c=LU&c=CA&c=CND&c=SU&c=OW&c=OP&c=OA&c=CLD&c=OO&details=yes">Lead Lifetime</a><br/><br/>       
+         <a href="https://ap15.salesforce.com/00O?rt=20&retURL=%2F00Q%2Fo&function=c&date=d&break0=LEAD_SOURCE&new_break=LEAD_SOURCE&pivot=STATUS&scope=user&colDt=CREATED_DATE&sdate=12%2F04%2F2020&hidden=STREET_LINE1&hidden=STREET_LINE2&hidden=STREET_LINE3&hidden=ANNUAL_REVENUE.CONVERT&t=title_LeadsBySourceReport&details=no&format=t">Lead By Source</a><br/><br/>
+         <a href="https://ap15.salesforce.com/00O?rt=21&retURL=%2F00Q%2Fo&pc0=EMAIL_BOUNCED_REASON&pn0=ne&pv0=&sort=EM&c=FN&c=LN&c=CO&c=EM&c=OW&c=EMAIL_BOUNCED_REASON&c=EMAIL_BOUNCED_DATE&details=yes">Bounced Leads</a><br/><br/><br/>
+           
+            
+            <a href="https://ap15.salesforce.com/00O/o?entityType=00O"><strong>Go to reports >></strong></a>       
+            
+            </apex:pageBlock>
+           
+           <apex:pageBlock title="Summary">
+               <strong>Interval:</strong>
+               <apex:outputLabel value="From:"/>&nbsp;&nbsp;&nbsp;
+               <apex:inputField type="date" value="{!lead.Appointment_Date__c}" showDatePicker="true"/><br/><br/>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <apex:outputLabel value="To:"/>&nbsp;&nbsp;&nbsp;
+               <apex:inputField type="date" value="{!lead.Appointment_Date__c}" showDatePicker="true"/><br/><br/>
+             
+               <strong>View</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <apex:selectList size="1">
+                   <apex:selectOption itemlabel="My Leads" itemValue="My Leads"/>
+                   <apex:selectOption itemlabel="My team's Leads" itemValue="My team's Leads"/>
+                   <apex:selectOption itemlabel="All Leads" itemValue="My team's Leads"/>
+                   
+             
+               </apex:selectList><br/><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <apex:commandButton value="Run Report"/>
+           </apex:pageBlock>
+       
+        <apex:pageBlock title="Tools" >
+        <a href="https://ap15.lightning.force.com/dataImporter/dataImporter.app?objectSelection=Lead">Import Leads</a>
+            <a href="https://ap15.salesforce.com/setup/own/massdelete.jsp?ftype=l&retURL=%2F00Q%2Fo" style="background-color:white">Mass delete Leads</a><br/><br/>
+            <a href="https://ap15.salesforce.com/p/own/BulkTransfer?retURL=%2F00Q%2Fo&ent=Lead">Transfer Leads</a><br/><br/>
+            <a href="https://ap15.salesforce.com/ui/massmail/MassMailStageManager?setupid=MassMailFilter&mm_type=Lead&wizardRetUrl=%2F00Q%2Fo">Mass Email Leads</a><br/><br/>
+            <a href="https://ap15.salesforce.com/ui/campaign/MassAddCampaignMembersWizard?macmw_type=Lead&macmw_mode=Add&wizardRetUrl=%2F00Q%2Fo">Mass add Leads to campaign</a><br/><br/>
+       
+            </apex:pageBlock>
+           
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+   
+     
+       
+    </apex:form>
+</apex:page>

@@ -1,0 +1,7 @@
+<aura:component >
+    <div class="log">
+    <lightning:input label="User Name"/>
+        <lightning:input label="Password"/><br/>
+    <lightning:button label="Login"/>
+    </div>
+</aura:component>

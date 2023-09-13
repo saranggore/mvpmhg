@@ -1,0 +1,28 @@
+<aura:component >
+    <lightning:button label="Save" title="save the record"/>
+    <lightning:button label="Edit" variant="Base"/>
+    <lightning:button label="Edit" variant="Neutral"/>
+    <lightning:button label="Edit" variant="Brand"/>
+    <lightning:button label="Edit" variant="Destructive"/>
+    <lightning:button label="Edit" variant="Success"/>
+    <lightning:button label="Edit" variant="invert"/>
+    <lightning:button label="Edit" disabled="true"/>
+    <lightning:button label="Download" iconName="utility:download" iconPosition="right" variant="destructive"/>
+    <br/><br/>
+    <lightning:buttongroup>
+    <lightning:button label="Save"/>
+<lightning:button label="Dave"/>
+<lightning:button label="Pave"/>
+        </lightning:buttongroup>
+    <br/>
+    <lightning:buttonGroup>
+		<lightning:button variant="neutral" label="Refresh" />
+		<lightning:button variant="neutral" label="Edit" />
+		<lightning:button variant="neutral" label="Save" />
+		<lightning:buttonMenu alternativeText="Show menu" class="slds-button_last">
+			<lightning:menuItem label="Menu Item One" value="item1" />
+			<lightning:menuItem label="Menu Item Two" value="item2" />
+			<lightning:menuItem label="Menu Item Three" value="item3" />
+		</lightning:buttonMenu>
+	</lightning:buttonGroup>
+</aura:component>

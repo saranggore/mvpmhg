@@ -1,0 +1,9 @@
+<template>
+<lightning-card>
+    <c-search-prod onselectedprod={handlevalue}></c-search-prod>
+
+    <lightning-datatable data={dispData} 
+    columns={columns} 
+    key-field="id"></lightning-datatable>
+</lightning-card>    
+</template>

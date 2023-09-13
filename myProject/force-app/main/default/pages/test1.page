@@ -1,0 +1,9 @@
+<apex:page controller="contactquery" contentType="application/vnd.ms-excel#SalesForceExport.xls" cache="true">
+    <apex:pageBlock title="Export Results" >
+        <apex:pageBlockTable value="{!cs}" var="contact">
+            <apex:column value="{!contact.ID}"/>
+            <apex:column value="{!contact.Status}"/>
+            <apex:column value="{!contact.CreatedDate}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

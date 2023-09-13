@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global"  controller="quickContactCreation">
+    <aura:attribute name="cont" type="Account" default="{'sobjectType':'account',
+                                                        'Name':'',
+                                                       'Region__c':'',
+                                                        'Zone__c':''}"/>
+    <lightning:input type="text" name="input1" label="Account Name" value="{!v.cont.Name}"/>
+    Region: <force:inputField value="{!v.cont.Region__c}"/>
+    Zone:   <force:inputField value="{!v.cont.Zone__c}"/>
+    <lightning:button label="Save" onclick="{!c.save}"/>
+</aura:component>

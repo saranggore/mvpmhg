@@ -1,0 +1,10 @@
+<apex:page controller="conwithMulti" >
+    <apex:form >
+    <apex:pageBlock title="Contacts">
+    <apex:pageBlockTable value="{!demo}" var="a">
+        <apex:column value="{!a.Name}"/>
+        <apex:column value="{!a.Method__c}"/>
+    </apex:pageBlockTable>    
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

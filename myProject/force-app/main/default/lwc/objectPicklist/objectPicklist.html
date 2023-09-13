@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Display Object-Fields">
+
+    
+    <lightning-layout column="2">
+       
+        <lightning-layout-item padding="around-small">
+           
+            <lightning-combobox
+            name="progress"
+            label="Object"
+            value={value}
+            placeholder="Select Progress"
+            options={mapData}
+            onchange={selectedObject} ></lightning-combobox>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small">
+             <lightning-combobox
+            name="Field"
+            label="Field"
+            value={value}
+            placeholder="Select Progress"
+            options={lstFields}
+            onchange={handleChnage} ></lightning-combobox>
+        </lightning-layout-item>
+
+    </lightning-layout>
+   
+
+</lightning-card>
+</template>

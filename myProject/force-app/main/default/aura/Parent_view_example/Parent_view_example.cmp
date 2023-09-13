@@ -1,0 +1,11 @@
+<aura:component >
+	<lightning:layout>
+    <lightning:layoutItem padding="around-small" size="4">
+        <c:dataTable/>
+    </lightning:layoutItem>
+    
+    <lightning:layoutItem padding="around-small" size="4">
+        <c:record_view_example/>
+    </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

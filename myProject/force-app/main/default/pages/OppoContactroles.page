@@ -1,0 +1,19 @@
+<apex:page controller="opporandchilds">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+        <apex:repeat value="{!feel}" var="acc">
+        <apex:pageBlockTable value="{!acc}" var="a">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.Stagename}"/>
+        <apex:column value="{!a.Account.Name}"/>
+        </apex:pageBlockTable>  
+            
+        <apex:pageBlockTable value="{!acc.opportunitycontactroles}" var="ocon">
+        <apex:column value="{!ocon.role}"/>
+        </apex:pageBlockTable>    
+        </apex:repeat>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

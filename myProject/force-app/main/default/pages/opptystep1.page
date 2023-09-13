@@ -1,0 +1,24 @@
+<apex:page controller="newopportunitycontroller" >
+    <apex:sectionHeader title="New Customer opportunity" subtitle="Step 1 of 3"/>
+    <apex:form >
+    <apex:pageBlock title="Customer Information">
+    <apex:pageBlockSection title="Account Information" columns="1">
+        <apex:inputfield value="{!account.Name}"/>
+        <apex:inputfield value="{!account.site}"/>
+    </apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="Contact Information" columns="1">
+        <apex:inputField value="{!contact.firstname}"/>
+            <apex:inputField value="{!contact.Lastname}"/>
+            <apex:inputField value="{!contact.phone}"/>
+    </apex:pageBlockSection>
+        <apex:pageBlockButtons location="bottom" >
+        <apex:commandButton value="Next" action="{!step2}"/>
+            
+            <apex:commandButton action="{!cancel}" value="Cancel"
+
+                              onclick="return confirmCancel()" immediate="true"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

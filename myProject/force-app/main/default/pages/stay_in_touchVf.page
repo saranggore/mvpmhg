@@ -1,0 +1,21 @@
+<apex:page standardController="Account" extensions="stay_in_touch">
+    <apex:form >
+        <apex:pageblock >
+    <apex:pageBlockButtons location="top">
+            <apex:commandButton value="Send Email" action="{!callMe}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1">
+                <apex:outputText value="{!Account.name}"/>
+                <apex:outputText value="{!Account.phone}"/>
+                <br/>
+                <apex:dataTable value="{!contacts}" var="a" frame="border" cellpadding="10" width="600" rules="rows">
+                     <apex:column value="{!a.LastName}" headerValue="LastName"/>
+                    <apex:column value="{!a.Name}" headerValue="Name"/>
+                     <apex:column value="{!a.phone}" headerValue="Phone"/>
+                     <apex:column value="{!a.Email}" headerValue="Email"/>
+                </apex:dataTable>
+               </apex:pageBlockSection>
+    </apex:pageblock>
+
+    </apex:form>
+    </apex:page>

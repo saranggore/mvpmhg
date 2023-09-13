@@ -1,0 +1,11 @@
+<apex:page standardcontroller="Opportunity" > 
+<apex:pageBlock > 
+<apex:pageBlockTable value="{!opportunity}" var="item"> 
+<apex:column > 
+<font color="{!if(item.name='Burberry','#ff0000','#00ff00')}"> 
+<apex:outputtext value="{!item.name}" /> 
+</font> 
+</apex:column> 
+</apex:pageBlockTable> 
+</apex:pageBlock> 
+</apex:page>

@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:attribute name="Amount" type="decimal"/>
+    <aura:attribute name="Years" type="decimal"/>
+    <aura:attribute name="Rate" type="decimal"/>
+    <aura:attribute name="Interest" type="decimal"/>
+    <lightning:card title="ICICI Bank" iconName="standard:lead">
+    <aura:set attribute="actions">
+        <lightning:buttonGroup>
+            <lightning:button label="Submit" onclick="{!c.Submit}"/>
+            <lightning:button label="Reset" onclick="{!c.Reset}"/>
+        </lightning:buttonGroup>
+        </aura:set>
+        <lightning:input label="Amount" type="number" value="{!v.Amount}"/>
+        <lightning:input label="Years"  type="number" value="{!v.Years}"/>
+        <lightning:input label="Rate"  type="number" value="{!v.Rate}"/>
+        <lightning:input label="Interest"  type="number" value="{!v.Interest}"/>
+        
+        
+    </lightning:card>
+</aura:component>

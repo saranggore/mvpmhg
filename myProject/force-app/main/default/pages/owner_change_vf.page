@@ -1,0 +1,15 @@
+<apex:page standardController="Account" extensions="Owner_change_extension" recordSetVar="items">
+<apex:form >
+
+    <apex:commandButton value="Change Owner" />
+    <apex:dataTable value="{!accounts}" var="a" cellpadding="10" rules="rows" frame="box" width="600">
+         <apex:column value="{!a.Name}" headerValue="Name"/>
+         <apex:column value="{!a.Phone}" headerValue="Phone"/>
+         <apex:column value="{!a.rating}" headerValue="rating"/>
+        <apex:column value="{!a.Industry}" headerValue="Industry"/>
+       
+    
+    </apex:dataTable>
+      
+</apex:form>
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page controller="test16">
+    <apex:form id="fm">
+        <apex:commandButton value="Show" action="{!setdata}" reRender="fm"/>
+        
+        <apex:commandButton value="cancel" action="{!invoke}" reRender="fm"/> <br/><br/>
+        
+        Name:{!name}<br/><br/>
+        Industry:{!industry}<br/><br/>
+        Ownership:{!ownership}<br/><br/>
+        rating:{!rating}<br/><br/>    
+    </apex:form>
+</apex:page>

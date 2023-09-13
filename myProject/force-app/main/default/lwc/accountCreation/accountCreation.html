@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-02-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Account Creation">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Enter Name" name="Name" onchange={handleAccName}></lightning-input>
+            <lightning-input label="Enter Type" name="Type" onchange={handleAccName}></lightning-input>
+
+            <lightning-button label="Create Account" onclick={createAccountOnClick} variant="brand"></lightning-button>
+
+        </div>
+
+    </lightning-card>
+</template>

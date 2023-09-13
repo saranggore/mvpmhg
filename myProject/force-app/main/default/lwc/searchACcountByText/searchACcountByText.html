@@ -1,0 +1,13 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Account Table">
+        <!-- sldsValidatorIgnoreNextLine -->
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Search" onchange={seachAccount} class="slds-m-bottom_small"></lightning-input>
+        </div>
+       
+        <lightning-datatable data={accRecords} columns={columns} key-field="Id"></lightning-datatable>
+
+    </lightning-card>
+   
+</template>

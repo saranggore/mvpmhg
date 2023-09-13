@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Fetch Data">
+        <lightning-input type="search" label="Search" onchange={handleChange} ></lightning-input>
+
+        <template for:each={displayNAme.data} for:item="item" >
+            <div key={item.id}>
+             <p>
+                 {item.Name}
+             </p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,33 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" controller="CaseComment" access="global" >
+    <aura:attribute name="com" type="string"/>
+    <aura:attribute name="email" type="string"/>
+    <aura:attribute name="errorMessage" type="string"/>
+    <aura:attribute name="showEmail" type="boolean" default="false"/>
+    <aura:attribute name="showErrors" type="boolean" default="false"/>
+    <aura:attribute name="recordId" type="string" default="5002v00002ve7HgAAI"/>
+    <aura:attribute name="StagePicklist" type="List" default="['--None--','Mayur','Sandeep']"/>
+    <aura:attribute name="selectedValue" type="string"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doit}"/>
+    <lightning:card>
+    
+        
+    <aura:if isTrue="{!v.showErrors}"> 
+        <p class="slds-align_absolute-center" style="color:red">{!v.errorMessage}</p>
+        </aura:if>     
+    <lightning:textarea name="Comment" value="{!v.com}" label="Comment" required="true"/>
+    <lightning:select label="Case Origin" value="{!v.selectedValue}" onchange="{!c.showField}">
+        <aura:iteration items="{!v.StagePicklist}" var="val">
+            <option value="{!val}"> {!val}</option>
+        </aura:iteration>
+        </lightning:select><br/>
+        <aura:if isTrue="{!v.showEmail}"> 
+        <lightning:input name="Contact Email" label="Contact Email" type="Email" required="true"/> 
+        </aura:if> 
+            <br/>  
+     <div class="slds-float--right">
+        <lightning:button label="Save" variant="Brand" onclick="{!c.save}"/>
+    </div>
+    </lightning:card>
+    <div class="demo"></div>
+        
+</aura:component>

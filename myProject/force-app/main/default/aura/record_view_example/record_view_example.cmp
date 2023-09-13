@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:attribute name="recId" type="Id"/>
+    <aura:attribute name="myMode" type="String"/>
+    <aura:attribute name="flag" type="Boolean" default="false"/>
+    
+    <aura:handler event="c:dataTable_event" action="{!c.callMe}"/>
+    
+    <aura:if isTrue="{!v.flag}">
+    <lightning:recordForm
+                          recordId="{!v.recId}"
+                          objectApiName="Opportunity"
+                          layoutType="Full"
+                          mode="{!v.myMode}"/>
+     </aura:if>
+</aura:component>

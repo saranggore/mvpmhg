@@ -1,0 +1,33 @@
+<apex:page standardcontroller="lead" recordSetVar="item"> 
+<style>
+.errorClass {
+    background-color: red;
+}
+.normalClass {
+    background-color: yellow;
+}
+.greenlClass {
+    background-color: green;
+}    
+</style>    
+<apex:pageBlock > 
+<apex:pageBlockTable value="{!item}" var="a"> 
+<apex:column value="{!a.name}" />
+<apex:column value="{!a.Company}" /> 
+<apex:column value="{!a.Completion_Date__c}" headerValue="Estimated COmpletion Date"/>     
+<apex:column value="{!a.color__c}" headerValue="Status"
+                     styleClass="{!IF(
+                                       (a.Completion_Date__c -TODAY())<=2 && (a.Completion_Date__c -TODAY())>0 ,'normalClass',
+                                       (IF(
+		                                   (a.Completion_Date__c -TODAY())=0,'greenlClass',
+			                              (IF(
+                                              (TODAY()-a.Completion_Date__c)>1,'errorClass','')
+			                                 )
+			   
+	                                 )))
+                                 }"
+ />  
+     
+</apex:pageBlockTable> 
+</apex:pageBlock> 
+</apex:page>

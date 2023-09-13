@@ -1,0 +1,13 @@
+<apex:page standardController="Opportunity" extensions="delete_opportunities" recordSetVar="item">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Delete" action="{!callMe}"/>
+        </apex:pageBlockButtons>
+        <apex:dataTable value="{!opportunities}" var="a" rules="rows" width="600" cellpadding="10" border="box" >
+        <apex:column value="{!a.Name}" headervalue="Name"/>
+          
+        </apex:dataTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

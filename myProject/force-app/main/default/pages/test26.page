@@ -1,0 +1,5 @@
+<apex:page controller="test25">
+    <apex:form >
+        <apex:commandButton value="Action" action="{!callMe}"/>
+</apex:form>
+    </apex:page>

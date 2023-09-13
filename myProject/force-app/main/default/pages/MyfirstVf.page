@@ -1,0 +1,11 @@
+<apex:page showHeader="False" sidebar="false">
+    <apex:includeLightning />
+    <div id="lightningCrardId">
+        <script>
+    $Lightning.use("c:FirstVfPage",function(){
+    $Lightning.createComponent("c:VfPageInLWC",{},"lightningCrardId",function(cmp){})
+    });
+    </script>
+    </div>
+    
+</apex:page>

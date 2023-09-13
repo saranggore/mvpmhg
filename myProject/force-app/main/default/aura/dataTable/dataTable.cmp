@@ -1,0 +1,16 @@
+<aura:component controller="dataTable_apex">
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="Object"/>
+    <aura:registerEvent name="first" type="c:dataTable_event"/>
+    <aura:handler name="init" value="{!this}" action="{!c.show}"/>
+    
+    <lightning:datatable 
+                         keyField="id"
+                         data="{! v.data}"
+                         columns="{! v.columns}"
+                         hideCheckboxColumn="false"
+                         onrowselection="{!c.invoke}"
+                         onrowaction="{!c.callMe}"
+                         />
+    
+</aura:component>

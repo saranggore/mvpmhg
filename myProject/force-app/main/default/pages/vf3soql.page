@@ -1,0 +1,11 @@
+<apex:page controller="soql3">
+    <apex:pageBlock title="Hot Rating">
+        <apex:pageBlockTable value="{!contacts}" var="a">
+        <apex:column value="{!a.Email}"/>
+             <apex:column value="{!a.Fax}"/>
+             <apex:column value="{!a.owner.Name}"/>
+             <apex:column value="{!a.Account.Name}"/>
+        </apex:pageBlockTable>
+    
+    </apex:pageBlock>
+</apex:page>

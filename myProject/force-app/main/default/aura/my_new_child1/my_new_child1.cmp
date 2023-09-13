@@ -1,0 +1,13 @@
+<aura:component >
+    <aura:registerEvent name="Mayur" type="c:my_new"/>
+    <aura:attribute name="newContact" type="contact" default="{'sObjectType':'contact'}"/>
+    <lightning:card title="Contact">
+    <aura:set attribute="actions">
+        <lightning:button label="Add Contact" onclick="{!c.callMe}"/>
+        </aura:set>
+        <lightning:input label="Last Name" type="{!v.newContact.LastName}"/>
+        <lightning:input label="First Name" type="{!v.newContact.FirstName}"/>
+        <lightning:input label="Phone" type="{!v.newContact.Phone}"/>
+        <lightning:input label="Title" type="{!v.newContact.Title}"/>
+    </lightning:card>
+</aura:component>

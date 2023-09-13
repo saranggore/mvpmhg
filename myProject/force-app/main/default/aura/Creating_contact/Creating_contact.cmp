@@ -1,0 +1,23 @@
+<aura:component controller="create_contact">
+    <aura:attribute name="conts" type="Contact" default="{'sobjectType':'Contact',
+                                                         'FirstName':'',
+                                                         'LastName':'',
+                                                         'Phone':''}"/>
+    <aura:attribute name="conList" type="contact[]"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.kare}"/>
+    <lightning:input label="First Name" value="{!v.conts.FirstName}"/>
+    <lightning:input label="Last Name"  value="{!v.conts.LastName}"/>
+    <lightning:input label="Phone"  value="{!v.conts.Phone}"/><br/>
+    <lightning:button label="Create" onclick="{!c.demoka}"/><br/>
+    <div style="height: 300px">
+        <lightning:datatable
+                keyField="id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+    </div>
+    
+</aura:component>

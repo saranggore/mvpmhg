@@ -1,0 +1,21 @@
+<template>
+    <Lightning-card title="Contact Display using apex" >
+     <template for:each={displayCon.data} for:item="con">
+         <div key={con.id}>
+             <p>ID:{con.Id}</p>
+             <p>NAME:{con.Name}</p>
+         </div>
+     </template>
+    </Lightning-card>
+
+    <lightning-card title="Display Account">
+        <template for:each={displayAccs.data} for:item="acc">
+            <div key={acc.id}>
+                <p>Account Id:{acc.Id}</p>
+              <p>Account Name:{acc.Name}</p>
+            </div>
+        </template>   
+    </lightning-card>
+
+    
+</template>

@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Filtering Records">
+       <div class="slds-p-around_medium">
+        <lightning-layout>
+            <lightning-layout-item  padding="around-small">
+               <lightning-combobox label="Filter By" options={filterByOptions} value={filterValue}
+               onchange={filterByHandler}></lightning-combobox>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small">
+                <lightning-input type="text" label="Filter" onkeyup={handleFilter}></lightning-input>
+            </lightning-layout-item>
+
+        </lightning-layout>
+       
+          <table>
+            <thead>
+            <tr>
+                <template for:each={headings} for:item="item">
+                    <th key={item}>{item}</th>
+                </template>
+            </tr>
+            </thead>
+            <tbody>
+                <template for:each={filteredData} for:item="itemdata">
+                    <tr key={itemdata.Id}>
+                        <td>{itemdata.Id}</td>
+                        <td>{itemdata.Name}</td>
+                        <td>{itemdata.Email}</td>
+                        <td>{itemdata.Phone}</td>
+
+                       </tr>
+                </template>
+               
+            </tbody>
+          </table>
+       </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,4 @@
+<aura:component >
+	<c:InsertAccount/>
+    <c:InsertAccount2/>
+</aura:component>

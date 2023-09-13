@@ -1,0 +1,27 @@
+<apex:page controller="DynamicSoql" >
+ <apex:form >
+ <apex:pageBlock title="Dynamic Soql">
+     <apex:pageBlockButtons location="top">
+         
+     <apex:commandButton value="Dynamic Query" action="{!dynamicSearch}"/>
+     </apex:pageBlockButtons>
+     <apex:pageBlockSection >
+         
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Enter Opportunity Name"/>
+                <apex:inputText value="{!oppName}"/>
+            </apex:pageBlockSectionItem>
+         
+         
+            
+         
+     </apex:pageBlockSection>
+ </apex:pageBlock>
+ <apex:pageBlock title="Result">
+        <apex:selectList value="{!strSelected}" multiselect="false" size="1">
+            <apex:selectOptions value="{!options}"/>
+        </apex:selectList>
+    
+ </apex:pageBlock>   
+ </apex:form>
+</apex:page>

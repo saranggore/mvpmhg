@@ -1,0 +1,19 @@
+<apex:page standardController="Account" recordSetVar="items">  
+  <apex:form >
+    <style>
+            .even{
+                background:#C13F23
+                }
+            </style>    
+    <apex:dataTable value="{!items}" var="a" rows="10" width="800" border="box" cellpadding="5" cellspacing="2" columnswidth="500,200,100" headerclass="even">
+            <apex:column value="{!a.name}" headerValue="Name"/>
+            <apex:column value="{!a.phone}" headerValue="Mobile"/>
+            <apex:column value="{!a.fax}" headerValue="Fax"/>
+        <apex:column headerValue="Action">
+        <apex:commandButton value="Edit" action="{URLFOR($Action.Account.edit,a.id}"/>
+        </apex:column>
+            
+        </apex:dataTable>
+      
+</apex:form>
+</apex:page>

@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:attribute name="Avalue" type="integer"/>
+    <aura:attribute name="Bvalue" type="integer"/>
+    <aura:attribute name="Cvalue" type="integer"/>
+    
+    <lightning:card title="Calculator" iconName="standard:account">
+        <aura:set attribute="actions">
+            <lightning:button label="Addition" onclick="{!c.addition}"/>
+            <lightning:button label="Multiplication" onclick="{!c.multiplication}"/>
+        </aura:set>
+        <lightning:input label="Enter A value" type="integer" value="{!v.Avalue}"/>
+        <lightning:input label="Enter B value" type="integer" value="{!v.Bvalue}"/>
+        Answer is:{!v.Cvalue}
+    </lightning:card>
+</aura:component>

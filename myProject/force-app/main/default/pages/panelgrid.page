@@ -1,0 +1,19 @@
+<apex:page >
+    <apex:panelGrid columns="3">
+    <apex:pageBlock title="Contract Information">
+        Item 1<br/>
+        Item 2<br/>
+        Item 3<br/>
+        Item 4<br/>
+        </apex:pageBlock>
+    <apex:pageBlock title="Case Information">
+        Item 5<br/>
+        Item 6<br/>
+    </apex:pageBlock>
+    <apex:pageBlock title="Account Information">
+        Item 7<br/>
+        Item 8<br/>
+    </apex:pageBlock>
+    
+    </apex:panelGrid>
+</apex:page>

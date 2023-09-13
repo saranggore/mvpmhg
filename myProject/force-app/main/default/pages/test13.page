@@ -1,0 +1,6 @@
+<apex:page controller="test14">
+    lastName:{!lastName};<br/><br/>
+    FirstName:{!firstName};<br/><br/>
+    city:{!city};<br/><br/>
+    phone:{!phone};<br/><br/>
+</apex:page>

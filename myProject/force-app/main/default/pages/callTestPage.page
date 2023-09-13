@@ -1,0 +1,17 @@
+<!---Vf page for entire apex Test--->
+<apex:page standardController="Account" extensions="TestController">
+    <apex:form >
+        <apex:pageMessages id="AccountId" />
+        <apex:commandButton value="Q1" action="{!accountBatch}"/><br/><br/>
+        <apex:commandButton value="Q2" action="{!accountSoql}"/><br/><br/>
+        <apex:commandButton value="Q3" action="{!ansPrint}"/><br/><br/>
+        <apex:commandButton value="Q4a" action="{!infLoop}"/><br/><br/>
+        <apex:commandButton value="Q4b" action="{!Loop2}"/><br/><br/>
+        <apex:commandButton value="Q5a" action="{!stateLimitSoql}"/><br/><br/>
+        <apex:commandButton value="Q5b" action="{!soqlStatementgovLimits}"/><br/><br/>
+        <apex:commandButton value="Q5c" action="{!dmlRowsGL}"/><br/><br/>
+        <apex:commandButton value="Q5d" action="{!dmlException}"/><br/><br/>
+        <apex:commandButton value="Q6a" action="{!accInsert}"/><br/><br/>
+        <apex:commandButton value="Q6b" action="{!delAccount}"/><br/><br/>
+    </apex:form>
+</apex:page>

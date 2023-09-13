@@ -1,0 +1,19 @@
+<apex:page Controller="NewController"  id="thePage"> 
+    <apex:form id="theForm"> 
+        <apex:pageBlock id="thePageBlock"> 
+           <apex:pageBlockTable value="{!mapToshowContactCount}" var="a">
+               <apex:column headerValue="Account Id"  >
+              
+               <apex:outputText value="{!a}" ></apex:outputText>
+               </apex:column>
+               <apex:column >
+             <apex:PageBlockTable value="{!mapToshowContactCount[a]}" var="v">
+                 <apex:column headerValue="Contact">
+               <apex:outputText value="{!v.Name}" ></apex:outputText>
+                 </apex:column>
+                 </apex:PageBlockTable>
+               </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock> 
+    </apex:form>
+</apex:page>

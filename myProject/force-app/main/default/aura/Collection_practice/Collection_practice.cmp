@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="number" type="boolean" default="false"/>
+    <aura:if isTrue="{!v.number}">
+        <lightning:button label="Show" />
+          <aura:set attribute="else"> 
+           you cant edit it
+          </aura:set>
+    </aura:if>
+</aura:component>

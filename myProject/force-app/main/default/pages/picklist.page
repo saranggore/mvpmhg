@@ -1,0 +1,76 @@
+<apex:page >
+    <apex:form >
+        <apex:sectionHeader title="Student" subtitle="New Student" help="help for this page"/>
+        <apex:pageBlock title="Student Edit" tabStyle="Lead">
+            
+            <apex:pageBlockButtons location="top">
+            <apex:commandButton value="Save"/>
+            <apex:commandButton value="Edit"/>
+            </apex:pageBlockButtons>
+       
+            <apex:pageBlockSection title="Basic Detail" columns="2" >
+           
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name"/>
+                    <apex:inputText />
+                </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+               <apex:outputLabel value=" Active:"/>
+                <apex:inputCheckbox />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                     <apex:outputLabel value="Password:"/>
+            <apex:inputSecret />    
+                </apex:pageBlockSectionItem>
+            
+                <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Gender:"/>
+                    <apex:selectRadio >
+                    <apex:selectOption itemlabel="Male" itemvalue="ma"/>
+                    <apex:selectOption itemlabel="Female" itemvalue="maa"/>   
+                </apex:selectRadio>
+                </apex:pageBlockSectionItem>
+                
+           </apex:pageBlockSection>
+
+        <apex:pageBlockSection Title="Communication Details" columns="2">
+           
+            <apex:pageBlockSectionItem >
+                City:
+            <apex:selectList size="1">
+                <apex:selectOption itemlabel="None" itemvalue="no"/>
+                <apex:selectOption itemlabel="Aurangabad" itemvalue="Aur"/>
+                <apex:selectOption itemlabel="Pune" itemvalue="nser"/>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+        
+            
+            <apex:pageBlockSectionItem >
+                Languages:
+                <apex:selectCheckboxes >
+                    <apex:selectOption itemlabel="Telgu" itemvalue="tel"/>
+                    <apex:selectOption itemlabel="English" itemvalue="eng"/>
+                    <apex:selectOption itemlabel="Hindi" itemvalue="hin"/>
+                </apex:selectCheckboxes>
+            </apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+    Address:
+    <apex:inputTextarea rows="3" cols="20"/>
+            </apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+    Email:<apex:inputText />
+            </apex:pageBlockSectionItem>
+
+            
+            
+            
+            </apex:pageBlockSection>
+
+            
+        </apex:pageBlock>
+        </apex:form>
+</apex:page>

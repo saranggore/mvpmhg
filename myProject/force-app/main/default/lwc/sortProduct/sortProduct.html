@@ -1,0 +1,19 @@
+<template>
+    <div class="container">
+        <template for:each={ElementList} for:item="Elements">
+            <tr key={Elements.Id}>
+                <th
+                key={Elements}
+                        
+                        class="Items"
+                        onchange={Change}
+                        draggable="true" 
+                        ondrop={Drop}
+                        ondragstart={DragStart}
+                        ondragover={DragOver}>
+                        {Elements}
+                </th>
+            </tr>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Child to parent">
+        <div class="slds-m-around_medium">
+            <lightning-button label="Select" title="Select" onclick={selectMethod}></lightning-button>
+            {message}
+            <template if:true={selected}>
+                <c-c1 message="Good Morning"
+                onclose={hidemodel}
+                ></c-c1>
+            </template>
+            
+        </div>
+    </lightning-card>
+    
+</template>

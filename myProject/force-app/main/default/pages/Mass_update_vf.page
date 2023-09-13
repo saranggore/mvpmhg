@@ -1,0 +1,14 @@
+<apex:page standardController="Account" extensions="MAss_update_data" recordSetVar="items">
+<apex:form >
+    <apex:commandButton value="Update" action="{!updateData}" />
+    <br/><br/>
+     <apex:dataTable value="{!accounts}" var="a" frame="box" rules="rows" cellpadding="10" width="600">
+        <apex:column value="{!a.name}"    headerValue="Name"/>
+        <apex:column value="{!a.phone}"    headerValue="phone"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}"   headerValue="rating"/>
+          <apex:column value="{!a.Ownership}"   headerValue="ownership"/>
+    
+    </apex:dataTable>
+    </apex:form>
+</apex:page>

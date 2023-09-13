@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Quiz App">
+        <div class="slds-m-around_medium">
+<template for:each={questions} for:item="tets">
+   <div key={id} class="slds-m-bottom_medium">
+<div><strong>{tets.id}-{tets.que}</strong></div>
+<div class="slds-grid  slds-gutters slds-p-bottom_medium">
+    <div class="slds-col">
+        <input type="radio" name={tets.id} value="a" onchange={changeHandler}/>
+        {tets.answers.a}
+    </div>
+    <div class="slds-col">
+        <input type="radio" name={tets.id} value="b" onchange={changeHandler}/>
+        {tets.answers.b}
+    </div>
+    <div class="slds-col">
+        <input type="radio" name={tets.id} value="c" onchange={changeHandler}/>
+        {tets.answers.c}
+    </div>
+</div>
+   </div>
+</template>
+<lightning-button type="submit" label="Submit" title="Submit Quiz" onclick={submitHandler}  variant="brand" ></lightning-button>
+        </div>
+    </lightning-card>
+</template>

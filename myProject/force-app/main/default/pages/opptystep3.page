@@ -1,0 +1,26 @@
+<apex:page controller="newopportunitycontroller" >
+    <apex:form >
+    <apex:sectionHeader title="New Customer Opportunity" subtitle="step 3 of 3"/>
+<apex:pageBlock title="Confirmation">
+    <apex:pageBlockSection title="Account Information" columns="1">
+    <apex:outputField value="{!account.name}"/>
+        <apex:outputField value="{!account.site}"/>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection title="Contact Information" columns="1">
+        <apex:outputField value="{!contact.firstname}"/>
+        <apex:outputField value="{!contact.Lastname}"/>
+        <apex:outputField value="{!contact.phone}"/>
+        <apex:outputField value="{!role.role}"/>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection title="Opportunity Information" columns="1">
+        <apex:outputField value="{!opportunity.name}"/>
+       
+<apex:outputField value="{!opportunity.closedate}"/>    
+    </apex:pageBlockSection>
+    <apex:pageBlockButtons location="bottom">
+    <apex:commandButton value="Previous" action="{!step2}"/>
+        <apex:commandButton value="Save" action="{!save}"/>
+    </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>
+    </apex:page>

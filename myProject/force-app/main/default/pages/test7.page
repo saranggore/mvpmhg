@@ -1,0 +1,44 @@
+<apex:page >
+<apex:sectionHeader title="Employee" subtitle="New Employee" help="/apex/Apex_Page"/>
+  <apex:form >
+   <apex:pageBlock title="Employee">
+      
+       <apex:pageBlockButtons location="bottom" dir="" >
+           <apex:commandButton value="cancel"/>
+           <apex:commandButton value="save"/>
+           </apex:pageBlockButtons>
+           
+           <apex:pageBlockSection title="Basics" columns="2">
+               
+           <apex:pageBlockSectionItem >
+           <apex:outputLabel value="Last Name"/>
+           <apex:inputText /> 
+           </apex:pageBlockSectionItem>
+        
+           
+       
+
+           <apex:pageBlockSectionItem >
+           <apex:outputLabel Value="First Name"/>
+           <apex:inputText />
+           </apex:pageBlockSectionItem>
+       
+           <apex:pageBlockSectionItem >
+           <apex:outputLabel Value="City"/>
+           <apex:inputText />
+           </apex:pageBlockSectionItem>
+           
+            
+           <apex:pageBlockSectionItem >
+           <apex:outputLabel Value="phone"/>
+           <apex:inputText />
+           </apex:pageBlockSectionItem>
+               
+           </apex:pageBlockSection>
+       
+       </apex:pageBlock>
+      
+      
+      
+    </apex:form>
+</apex:page>

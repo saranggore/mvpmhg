@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Movie Detail">
+        <lightning-input class="slds-p-left_xx-large" type="checkbox" label="Show Movies" onchange={handleChange} ></lightning-input>
+<div if:true={showData}>
+    Movie Names :
+    <template for:each={movieData} for:item="item">
+       
+        <div key={item.Name}>
+            
+        <lightning-button label={item.Name} value={item.Name} onclick={handleit}></lightning-button><br/>
+        
+        </div>
+     </template>
+
+</div>
+        <lightning-card>
+            <div if:true={showData2}>
+                Movie Name :  {MovieName}<br/>
+
+                Movie Year :  {Year}<br/>
+      
+                Movie Genere :{Genere}<br/><br/>
+            </div>
+            
+        </lightning-card>
+    </lightning-card>
+</template>

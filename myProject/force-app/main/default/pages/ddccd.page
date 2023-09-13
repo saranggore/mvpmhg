@@ -1,0 +1,22 @@
+<apex:page controller="emplyee">
+    <apex:form >
+    <apex:pageBlock title="Profile Layout">
+        <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Save" />
+              <apex:commandButton value="Edit" />
+        </apex:pageBlockButtons>
+    <apex:pageBlockTable value="{!need}" var="a">
+        <apex:column >
+        <apex:facet name="header">Profile Name</apex:facet>
+        <apex:outputText value="{!a.Name}"/>
+            </apex:column>
+        <apex:column value="{!a.UserType}"/>
+        <apex:column value="{!a.Id}"/>
+       
+     <apex:column value="{!a.UserLicenseId}"/>
+<apex:column value="{!a.PermissionsViewRoles}"/>
+        <apex:column value="{!a.SystemModstamp}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

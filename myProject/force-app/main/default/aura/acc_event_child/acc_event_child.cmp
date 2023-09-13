@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="acc" type="Account" default="{'sobject':'Account'}"/>
+    <aura:registerEvent name="mgm" type="c.acc_event"/>
+    <lightning:input label=" Name" value="{!v.acc.Name}"/>
+    <lightning:input label=" Phone" value="{!v.acc.Phone}"/>
+    <lightning:input label=" Industry" value="{!v.acc.Industry}"/>
+    <lightning:input label=" Rating" value="{!v.acc.Rating}"/>
+    <lightning:button label="Save" onclick="{!c.save}"/>
+</aura:component>

@@ -1,0 +1,17 @@
+<apex:page controller="acccandcont">
+    <apex:form >
+    <apex:pageBlock title="Account and Related contacts">
+        <apex:pageBlockTable value="{!kare}" var="a">
+        <apex:column >
+            <apex:facet name="header">Account Name</apex:facet>
+            <apex:outputText value="{!a}"/>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Related contacts</apex:facet>
+                <apex:outputText value="{!kare[a]}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+        
+ </apex:pageBlock>
+    </apex:form>
+</apex:page>

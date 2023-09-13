@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="All Contact Records">
+        <lightning-input label="Enter Count" name="Enter Count"  onchange={countChange} class="slds-p-around_medium"></lightning-input>
+    <br/>
+        <ul>
+             <template for:each={contacts.data} for:item="contact">
+                        <li key={contact.Id}>
+                           <div class="slds-p-around_medium lgc-bc">
+                               <lightning-tile label={contact.Name}>
+                                <p>{contact.Phone}</p>
+                               </lightning-tile>
+                           </div>
+                        </li>
+                </template>
+        </ul>
+    </lightning-card>
+</template>

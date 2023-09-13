@@ -1,0 +1,13 @@
+<aura:component controller="daattable_practice">
+    <aura:attribute name="data" type="object"/>
+    <aura:attribute name="columns" type="list"/>
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    <lightning:datatable
+                    keyField="id"
+                    data="{!v.data}"
+                    columns="{!v.columns}"
+                    hideCheckboxColumn="false"
+                    onrowselection="{!c.invoke}"
+                    onrowaction="{!c.call}"
+                    />
+</aura:component>

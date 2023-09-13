@@ -1,0 +1,21 @@
+<apex:page controller="searchVfpage">
+    <apex:form >
+        <apex:pageblock >
+            
+                <apex:inputText value="{!text}" />&nbsp;&nbsp;
+                <apex:commandButton value="Search Email" action="{!dosearch}"/>
+            <apex:pageBlockTable value="{!searched}" var="a">
+                
+              <apex:column >
+                <apex:facet name="header">Opportunity Email</apex:facet>
+                "{!a}"
+                </apex:column>
+                <apex:column >
+                <apex:facet name="header">Opportunity Name</apex:facet>
+                {!searched[a]}
+                </apex:column>
+            </apex:pageBlockTable>
+                      
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

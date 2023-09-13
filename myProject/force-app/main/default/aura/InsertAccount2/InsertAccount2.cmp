@@ -1,0 +1,5 @@
+<aura:component controller="AccInsert">
+    
+    <aura:handler name="Mayu" event="c:SensAccountName" action="{!c.record}"/>
+    <c:InsertAccount/>
+</aura:component>

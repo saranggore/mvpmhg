@@ -1,0 +1,9 @@
+<apex:page standardcontroller="Account" extensions="practiceExample5">
+ <apex:form >
+      <apex:pageMessages id="AccountId" />
+       Enter Object Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:inputtext value="{!objectName}" /> &nbsp;&nbsp;<br/><br/>
+       Enter Name Field value  :&nbsp;&nbsp;&nbsp;<apex:inputtext value="{!fieldName}" /> &nbsp;&nbsp;<br/><br/>
+         <apex:commandButton value="Insert record" action="{!dmlOperations}"/>
+     
+   </apex:form>
+</apex:page>

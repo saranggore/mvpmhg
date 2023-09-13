@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Simple create record">
+        <lightning-input name="Name" label="Name" onchange={callName} ></lightning-input>
+        <lightning-input name="Phone" label="Phone" onchange={callPhone} ></lightning-input>
+        <lightning-input name="Email__c" label="Email" onchange={callEmail} ></lightning-input>
+        <lightning-button variant="Brand" label="Create Account" onclick={createACcount} ></lightning-button>
+    
+    </lightning-card>
+</template>

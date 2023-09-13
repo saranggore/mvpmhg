@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="wire service">
+        <template if:true={userdetail}>
+            <div>Name-{userdetail.Name.value}</div>            
+          <div>Email-{userdetail.Email.value}</div>
+        </template>
+    </lightning-card>
+</template>

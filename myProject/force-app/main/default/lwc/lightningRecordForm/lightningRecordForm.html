@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="Record Form: Read only" >
+        <div class="slds-p-around_medium">
+          <lightning-record-form
+                     mode="readonly"
+                     columns="2"
+                     layout-type="Compact"
+                     record-id={recordId}
+                     object-api-name={objectApiName}
+          ></lightning-record-form> 
+               
+        </div>
+    </lightning-card>
+    <lightning-card title="Record Form: View" >
+        <div class="slds-p-around_medium">
+          <lightning-record-form
+                     mode="view"
+                     columns="2"
+                     layout-type="Compact"
+                     record-id={recordId}
+                     object-api-name={objectApiName}
+          ></lightning-record-form> 
+               
+        </div>
+    </lightning-card>
+    <lightning-card title="Record Form: Edit" >
+        <div class="slds-p-around_medium">
+          <lightning-record-form
+                     mode="Edit"
+                     columns="2"
+                     layout-type="Full"
+                     object-api-name={objectApiName}
+          ></lightning-record-form> 
+               
+        </div>
+    </lightning-card>
+    <lightning-card title="Record Form: specific field display" >
+        <div class="slds-p-around_medium">
+          <lightning-record-form
+                     mode="edit"
+                     columns="2"
+                     record-id={recordId}
+                     object-api-name={objectApiName}
+                     fields={fields}
+                     onsuccess={handleSuccess}
+          ></lightning-record-form> 
+               
+        </div>
+    </lightning-card>
+</template>

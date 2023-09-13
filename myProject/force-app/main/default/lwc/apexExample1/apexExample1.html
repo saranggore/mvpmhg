@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Apex class Example">
+     <template for:each={filteredAccount.data} for:item="item">
+         <div class="sldx-box slds-box_xx-small" key={item.id}>
+             <p>Id: {item.Id}</p>
+             <p>Name: {item.Name}</p>
+             <p>Type: {item.Type}</p>
+         </div>
+     </template>
+    </lightning-card>
+</template>

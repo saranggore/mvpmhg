@@ -1,0 +1,12 @@
+<aura:component controller="contact_creation">
+    <aura:attribute name="con" type="Contact" default="{'sobjectType':'Contact',
+                                                       'FirstName':'',
+                                                       'LastName':'',
+                                                       'Phone':''}"/>
+    
+    <lightning:input label="First Name" value="{!v.con.FirstName}"/>
+    <lightning:input label="Last Name" value="{!v.con.LastName}"/>
+    <lightning:input label="Phone" value="{!v.con.Phone}"/><br/>
+    <lightning:button label="Save" onclick="{!c.submit}"/>
+    
+</aura:component>

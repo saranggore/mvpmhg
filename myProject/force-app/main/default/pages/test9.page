@@ -1,0 +1,14 @@
+<apex:page standardController="Contact" >
+    <apex:sectionHeader title="Contact" subtitle="New COntact"/>
+<apex:form >
+    <apex:pageblock title="Contact Edit ">
+        <apex:pageBlockSection >
+    <apex:inputField value="{!contact.LastName}"/>
+        <apex:inputField value="{!contact.FirstName}"/>
+        <apex:inputField value="{!contact.Phone}"/>
+        <apex:inputField value="{!contact.email}"/>
+        <apex:inputField value="{!contact.ownerId}"/>
+            </apex:pageBlockSection>
+    </apex:pageblock>
+   </apex:form>
+</apex:page>

@@ -1,0 +1,36 @@
+<aura:component controller="dsp_home" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="name" type="string"/>
+     <aura:attribute name="list" type="List"/>
+     <aura:attribute name="tasklist" type="List"/>
+    <aura:attribute name="candilist" type="List"/>
+    <aura:attribute name="data" type="List"/>
+    <aura:attribute name="columns" type="List"/>
+
+    <div class="slds-col slds-size_1-of-4 slds-p-around_small">
+    <lightning:input label="Enter DSP Name:" value="{!v.name}"/>
+    <lightning:button label="Search" onclick="{!c.search}"/>
+    </div>
+    <aura:iteration var="acc" items="{!v.list}" >
+        <div class="slds-col slds-size_1-of-4 slds-p-around_small">
+    <lightning:card title="DSP Name" iconName="standard:lead">
+        <a href="javascript:void(0);" onclick="{!c.task}" data-value="{!acc.Id}">{!acc.Name}</a>
+    </lightning:card>
+        </div> 
+    </aura:iteration>
+    <div class="slds-grid slds-wrap">
+    <aura:iteration var="ac" items="{!v.tasklist}" >
+        <div class="slds-col slds-size_1-of-4 slds-p-around_small">
+    <lightning:card title="Tasks" iconName="standard:lead">
+        <a href="javascript:void(0);" onclick="{!c.task2}" data-value="{!ac.Name}">{!ac.Name}</a>
+    </lightning:card>
+        </div> 
+    </aura:iteration>
+    </div>
+    <div style="height: 300px">
+        <lightning:datatable
+                keyField="id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+    </div>
+</aura:component>

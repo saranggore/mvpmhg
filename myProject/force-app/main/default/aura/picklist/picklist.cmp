@@ -1,0 +1,14 @@
+<aura:component >
+    <aura:attribute name="options" type="list" default="[
+                                                         {label:'English',value:'en'},
+                                                         {label:'German',value:'ge'},
+                                                         {label:'Spanish',value:'sp'},
+                                                         {label:'French',value:'fe'},
+                                                         {label:'Italian',value:'it'}
+                                                         ]"/>
+    <lightning:dualListbox name="language" 
+                            label="New list"
+                            sourceLabel="Available"
+                            selectedLabel="Selected"
+                            options="{!v.options}"/>
+</aura:component>

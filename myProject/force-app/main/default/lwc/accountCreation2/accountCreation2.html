@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Account Creation" class="slds-p-around_medium" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+            <form>
+                <lightning-input label="Name" name="Name" onchange={handleEvent} ></lightning-input>
+                <lightning-input label="Type" name="Type" onchange={handleEvent} ></lightning-input>
+                <lightning-input label="Industry" name="Industry" onchange={handleEvent} ></lightning-input>
+            
+            </form>
+           </div>
+        <lightning-button type="reset" label="Create Account" variant="Brand" onclick={createAccount} class="slds-p-around_medium slds-m-top_large"></lightning-button>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <template for:each={details} for:item="user">
+        <div class="card" key={user.Name}>
+            <h1>{user.Name}</h1>
+                <p>{user.Role}</p>
+                    <p>{user.Company}</p>
+                    <lightning-button
+        variant="brand"
+        label="Contact"
+        title="Contact"
+        onclick={handleClick}>
+    </lightning-button>
+                    <hr/>
+
+        </div>
+
+    </template>
+</template>

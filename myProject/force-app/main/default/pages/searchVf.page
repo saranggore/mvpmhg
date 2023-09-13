@@ -1,0 +1,18 @@
+<apex:page controller="searchVfpage" >
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Search" action="{!searchopportunity}"/>
+        </apex:pageBlockButtons>    
+        <apex:pageBlockTable value="{!opportunity}" var="a">
+        <apex:column >
+            <apex:facet name="header">{!a.Email__c}</apex:facet>
+            </apex:column>
+        <apex:column >
+            <apex:facet name="header">{!a.Phone__c}</apex:facet>
+            </apex:column>
+                
+            </apex:pageBlockTable>
+            </apex:pageBlock>
+            </apex:form>
+            </apex:page>

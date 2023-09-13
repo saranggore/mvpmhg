@@ -1,0 +1,13 @@
+<apex:page controller="mailfromVF">
+<apex:form >
+ <apex:pageBlock >
+     
+    <apex:outputText value="Subject :"/>
+    <apex:inputText value="{!Subject}"/><br/><br/>
+    <apex:outputText value="Body :"/>    
+    <apex:inputText value="{!Body}"/><br/><br/>
+    <apex:commandButton value="Send" action="{!callme}"/>
+     </apex:pageBlock>
+</apex:form>    
+
+</apex:page>

@@ -1,0 +1,10 @@
+<aura:component >
+    <aura:handler name="first" event="c:Event_one" action="{!c.demo}"/>
+    <aura:attribute name="maya" type="string"/>
+	<lightning:card title="Parent">
+        I am parent<br/><br/>
+        I am parent<br/><br/>
+        Name :{!v.maya}
+    </lightning:card>
+    <c:Event_one_child/>
+</aura:component>

@@ -1,0 +1,9 @@
+<aura:component controller="cal_auraApex">
+    <aura:attribute name="first" type="decimal"/>
+    <aura:attribute name="second" type="decimal"/>
+    <aura:attribute name="Result" type="decimal"/>
+    <Lightning:input label="Enter first Number" value="{!v.first}"/>
+    <Lightning:input label="Enter Second Number" value="{!v.second}"/>
+    <Lightning:button label="Result" onclick="{!c.result1}"/><br/>    
+    Result={!v.Result}
+</aura:component>

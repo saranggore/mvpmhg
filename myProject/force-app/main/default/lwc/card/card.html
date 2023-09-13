@@ -1,0 +1,20 @@
+<template>
+  <lightning-card title="Two-way Data Binding Demo" icon-name="custom:custom2">
+    <hr />
+
+    <p>My name is {fullname}</p>
+
+  </lightning-card>
+ 
+  <lightning-card title="Data Binding" icon-name="custom:custom2">
+    <div class="slds-p-around_medium">
+    <lightning-input label="Enter Full Name" type="text" value={title} name="title" onkeyup={changeHandler}></lightning-input>
+ 
+ 
+  </div>
+    <div class="slds-p-around_medium">
+      <p>MY title is {title}</p>
+   </div>
+  </lightning-card>
+  
+</template>

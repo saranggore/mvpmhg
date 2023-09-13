@@ -1,0 +1,14 @@
+<aura:component >
+    
+    <aura:attribute name="newAccount" type="string" />
+    <aura:registerEvent name="mayur" type="c:contact_event"/>
+    <div class="outer">
+	<lightning:card title="Account">
+        <aura:set attribute="actions">
+            <lightning:button label="Submit" onclick="{!c.create}"/>
+        </aura:set>
+        <lightning:input label="Account Name" value="{!v.newAccount}" />
+    </lightning:card>
+        </div>
+    
+</aura:component>

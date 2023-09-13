@@ -1,0 +1,22 @@
+<aura:component>
+     <div class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+         <lightning:recordEditForm aura:id="recordEditForm" recordId="0032v00003Yn12J" objectApiName="Contact">
+             <lightning:inputField fieldName="FirstName"/> 
+             <lightning:inputField fieldName="LastName"/>
+             <lightning:inputField fieldName="Birthdate"/>
+             <lightning:inputField fieldName="Phone"/>
+             <lightning:inputField fieldName="LeadSource"/>
+             <lightning:button label="SUbmit Record" type="submit"/>
+         
+         </lightning:recordEditForm>
+    </div>
+    <div class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+    <lightning:recordViewForm recordId="0032v00003Yn12J" objectApiName="Contact">
+        <div class="slds-box">
+        <lightning:outputField fieldName="Name"/>
+        <lightning:outputField fieldName="Phone"/>
+        <lightning:outputField fieldName="LeadSource"/>
+            </div>
+        </lightning:recordViewForm> 
+    </div>   
+</aura:component>

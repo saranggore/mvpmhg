@@ -1,0 +1,22 @@
+<apex:page >
+    <apex:form >
+    <apex:sectionHeader title="Student" subtitle="New Student" help="apex/apex_page"/>
+    <apex:pageBlock title="New class">
+        <apex:pageBlockSection columns="1">
+            
+        <apex:pageBlock title="Recent Account">
+            <apex:pageBlockButtons location="Top">
+            <apex:commandButton value="New"/>
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+           
+            <apex:pageBlock title="Report">
+        </apex:pageBlock>
+            <apex:pageBlock title="Tool">
+        </apex:pageBlock>
+        </apex:pageBlockSection>
+    
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

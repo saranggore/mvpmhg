@@ -1,0 +1,31 @@
+<apex:page controller="fb_integration">
+    <apex:form >
+    <apex:pageblock id="one">
+    <apex:pageBlockButtons location="top">
+    <apex:commandButton value="Request Token" action="{!invoke}" rerender="one"/>
+        <apex:commandButton value="Request Data" action="{!fbpage}"/>
+        </apex:pageBlockButtons>    
+  
+        <apex:pageBlockSection columns="1" >
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="{!res}"/>
+          
+            
+                  
+            </apex:pageBlockSectionItem>
+          
+        </apex:pageBlockSection>
+        <apex:pageBlockSection >
+        <apex:pageblocktable value="{!result}" var="a"  >
+            <apex:column value="{!a}"/>
+              <apex:column value="{!result[a]}"/>
+            </apex:pageblocktable>
+         	  <apex:outputLabel value="{!str}"/>
+            <apex:outputText value="{!id1}">Page Id:</apex:outputText><br/>
+            <apex:outputText value="{!name1}">Name:</apex:outputText><br/>
+            <apex:outputText value="{!email}">Email:</apex:outputText><br/>
+            {!kare}
+        </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

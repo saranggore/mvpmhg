@@ -1,0 +1,27 @@
+<aura:component >
+    <aura:attribute name="amount" type="integer"/>
+     <aura:attribute name="rate" type="integer"/>
+     <aura:attribute name="years" type="integer"/>
+     <aura:attribute name="interest" type="decimal"/>
+    <aura:attribute name="flag" type="Boolean" default="true"/>
+    
+    <aura:if isTrue="{!v.flag}">
+             <lightning:card title="Calculator">
+                <aura:set attribute="actions">
+                   <lightning:button label="Submit" onclick="{!c.calculate}"/>
+                </aura:set>
+                <lightning:input label="Amount" aura:id="amount"/>
+                <lightning:input label="Rate" aura:id="rate"/>
+                <lightning:input label="Years" aura:id="years"/>
+                <lightning:input label="Interest" value="{!v.interest}"/>
+             </lightning:card>
+        <aura:set attribute="else">
+                Amount={!v.amount}<br/>
+                Rate={!v.rate}<br/>
+                Years={!v.interest}<br/>
+                Interest={!v.interest}<br/>
+        </aura:set>
+    </aura:if>
+    
+    
+</aura:component>

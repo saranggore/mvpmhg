@@ -1,0 +1,14 @@
+<apex:page standardController="Account" showHeader="true" sidebar="true">
+  <apex:form >
+    <apex:pageblock title="Test1">
+      <apex:pageBlockButtons location="top">
+           <apex:commandButton value="Save"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection >
+      <apex:inputField label="Name" value="{!Account.Name}"/>  
+          <apex:inputField label="Type" value="{!Account.Type}"/>  
+          <apex:inputField label="Industry" value="{!Account.Industry}"/>  
+      </apex:pageBlockSection>  
+    </apex:pageblock>
+  </apex:form>
+</apex:page>

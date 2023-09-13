@@ -1,0 +1,11 @@
+<apex:page controller="SOqlopportunity">
+<apex:pageBlock title="Opportunity">
+    <apex:pageBlockTable value="{!opps}" var="a">
+        <apex:column value="{!a.Account.Name}"/>
+        <apex:column value="{!a.Amount}"/>
+        <apex:column value="{!a.CloseDate}"/>
+        <apex:column value="{!a.Discount__c}"/>
+       	
+    </apex:pageBlockTable>>
+    </apex:pageBlock>
+</apex:page>

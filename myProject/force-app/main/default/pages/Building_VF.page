@@ -1,0 +1,20 @@
+<apex:page controller="leasebulding">
+    <apex:form >
+    <apex:pageBlock >
+       <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Add Flat Number" action="{!addnumber}"/>
+        <apex:commandButton value="Save Record"/>
+        </apex:pageBlockButtons>
+    
+        <apex:pageBlockSection title="Add Building"  >
+         <apex:inputText label="Building Name" value="{!name}"/><br/><br/>
+         <apex:inputText label="Building Address"/>
+        </apex:pageBlockSection>    
+   
+        <apex:pageBlockSection title="Add Flats" >
+         <apex:inputText label="Flat Number" value="{!name1}"/>
+        </apex:pageBlockSection>    
+       
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

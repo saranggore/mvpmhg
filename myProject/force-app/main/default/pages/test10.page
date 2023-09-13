@@ -1,0 +1,32 @@
+<apex:page standardController="opportunity">
+    <apex:sectionHeader title="Opportunity" subtitle="New opportunity" help="apex/Apex_page"/>
+<apex:form >
+    <apex:pageBlock title="Opportunity Edit">
+        <apex:pageBlockButtons location="top">
+          <apex:commandButton value="save"/>
+            <apex:commandButton value="Delete"/>
+       </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Basic Detail">  
+        
+            <apex:inputField value="{!opportunity.Name}" />
+                <apex:inputField value="{!opportunity.stageName}" />
+            <apex:inputField value="{!opportunity.type}" />
+            <apex:inputField value="{!opportunity.closeDate}" />
+            
+        </apex:pageBlockSection>
+    
+        
+            <apex:pageBlockSection title="Other Detail">  
+        
+                <apex:inputField value="{!opportunity.Amount}" />
+                
+                <apex:inputField value="{!opportunity.LeadSource}" />
+                
+                <apex:inputField value="{!opportunity.NextStep}" />
+                
+                <apex:inputField value="{!opportunity.AccountId}" />
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

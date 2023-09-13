@@ -1,0 +1,15 @@
+<aura:component controller="showAccount">
+    <aura:attribute name="data" type="object"/>
+    <aura:Attribute name="column" type="list"/>
+    <aura:attribute name="selectedRowsCount" type="Integer" default="0"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/> 
+    <h1>Selected Rows: {! v.selectedRowsCount }</h1>
+    <lightning:datatable 
+                         data="{!v.data}"
+                         columns="{!v.column}"
+                         keyField="id"
+                         onrowselection="{!c.updateselected}"
+                         />
+    <lightning:button name="Show Account" label="Show Account" onclick="{!c.show}"/>
+    
+</aura:component>

@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+    
+    <lightning:button label="Show PopUp"
+                      iconName="utility:new_window"
+                      iconPosition="left"
+                      variant="brand"
+                      onclick="{!c.showPopup}" />
+    
+    <div role="dialog" tabindex="-1" aria-labelledby="header43" aura:id="Modalbox" class="slds-modal slds-modal_large">
+        <div class="slds-modal__container" style="width: 40%;">
+            <div class="slds-modal__header">
+                <p>Account Details</p>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium">  
+                <iframe src="{!'https://mvpmgh-dev-ed--c.ap5.visual.force.com/apex/Add_sir_contact'}" width="100%" height="500px;" frameBorder="0"/>
+            </div>
+            <div class="slds-modal__footer">
+                <lightning:button label="close" onclick="{!c.closeModal}" />
+            </div>
+        </div>
+    </div>
+</aura:component>

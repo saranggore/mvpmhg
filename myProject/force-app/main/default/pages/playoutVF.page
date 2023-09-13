@@ -1,0 +1,7 @@
+<apex:page controller="playout" >
+    <apex:pageblock >
+    <apex:pageBlockTable value="{!name}" var="a">
+        <apex:column value="{!name}"/>
+        </apex:pageBlockTable>
+    </apex:pageblock>
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page controller="displayCandidate">
+    <apex:form >
+    <apex:pageblock >
+    <apex:pageBlockTable value="{!candi}" var="item">
+    <apex:column value="{!item.Name}"/>
+   <apex:column >
+<apex:outputLink value="{!URLFOR($Action.Candidate__c.View,item.Candidate_Id__c)}" target="_blank">
+        {!item.Candidate_Name__c}
+ </apex:outputLink>
+</apex:column> 
+    </apex:pageBlockTable>
+    </apex:pageblock>
+        </apex:form>
+</apex:page>

@@ -1,0 +1,23 @@
+<template>
+    <template iterator:comp={mylist}>
+<div  key={comp.value.id}>
+    <a
+    href="#"
+    if:true={comp.first}
+    class="list-group-item list-group-item-action header"
+  >
+    <strong>List of top companies and there CEO's : </strong>
+  </a>
+   <a href="#" ><strong>{comp.value.company }:</strong>  {comp.value.name}</a>
+
+   <a
+                href="#"
+                if:true={comp.last}
+                class="list-group-item list-group-item-action footer"
+              >
+                <strong>&copy; 2019 Lightning school salesforce </strong>
+              </a>
+</div>
+    </template>
+
+</template>

@@ -1,0 +1,4 @@
+<aura:component controller="getAllContacts" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="contactList" type="List"/>
+    <lightning:button label="Get Contacts" variant="destructive" onclick="{!c.getContacts}"/>	
+</aura:component>

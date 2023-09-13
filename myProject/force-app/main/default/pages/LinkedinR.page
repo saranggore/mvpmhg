@@ -1,0 +1,29 @@
+<apex:page controller="linkedinconnect">
+    <apex:form >
+       <apex:pageblock >
+        
+          <apex:pageBlockButtons location="top">
+          <apex:commandButton value="Request Code" action="{!requestcode}" />
+          </apex:pageBlockButtons>    
+        
+         <apex:pageBlockSection columns="1">
+                   
+                   <apex:pageBlockSectionItem >
+                   <apex:outputLabel value="clientid"/>
+                   <apex:inputText value="{!clientid}" size="50"/>
+                   </apex:pageBlockSectionItem>     
+                   
+                   <apex:pageBlockSectionItem >
+                   <apex:outputLabel value="state"/>
+                   <apex:inputText value="{!state}" size="50"/>
+                   </apex:pageBlockSectionItem>        
+             
+                   <apex:pageBlockSectionItem >
+                   <apex:outputLabel value="redirectUrl"/>
+                   <apex:inputText value="{!redirectUrl}" size="50"/>
+                   </apex:pageBlockSectionItem> 
+                   </apex:pageBlockSection>
+        
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page standardController="Opportunity" recordSetVar="iteams">
+    <apex:form >
+    <apex:pageBlock title="New opportunity">
+    <apex:pageBlockTable value="{!iteams}" var="a" rows="5" first="5">
+        <apex:column >
+        <apex:facet name="header" > <apex:inputCheckbox /> </apex:facet> 
+        <apex:inputCheckbox />
+        </apex:column>
+        
+        <apex:column value="{!a.Name}" />
+        <apex:column value="{!a.Amount}"/>
+        
+        <apex:column headerValue="Account Name">
+        <apex:commandLink value="{!a.name}" action="/{!a.id}"/>
+             </apex:column>  
+        
+        <apex:column headerValue="Changes">
+        <apex:commandLink value="Edit" action="{!URLFOR($Action.opportunity.edit,a.id)}"/>
+            &nbsp;| &nbsp;
+            <apex:commandLink value="Delete" action="{!URLFOR($Action.opportunity.delete,a.id)}"/>
+            </apex:column>    
+      
+       
+       
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+        </apex:form>
+
+</apex:page>

@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable" controller="DSP_LANDING_Page">
+	
+    <aura:attribute name="selectedValue" type="string"/>
+    <aura:attribute name="StagePicklist" type="List" default="['--None--']"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doit}"/>
+    <lightning:select label="Select DSP" value="{!v.selectedValue}" onchange="{!c.showField}">
+        <aura:iteration items="{!v.StagePicklist}" var="val">
+            <option value="{!val}"> {!val}</option>
+        </aura:iteration>
+        </lightning:select><br/>
+</aura:component>

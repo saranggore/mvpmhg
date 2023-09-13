@@ -1,0 +1,39 @@
+<template>
+   
+        <lightning-layout>
+           
+            <lightning-layout-item  size="6">
+                <lightning-card title="View Record">
+                    <div class="slds-m-around_medium"></div>
+                <lightning-record-view-form 
+                object-api-name="Contact"
+                record-id={recordId}>
+
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name={LastName}> </lightning-output-field>
+                            <lightning-output-field field-name={AccountName}> </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name={Reports_To}> </lightning-output-field>
+                            <lightning-output-field field-name={Amount_1}> </lightning-output-field>
+                        </div>
+                        </div>
+                    </lightning-record-view-form>
+            </lightning-card>
+            </lightning-layout-item>
+        
+            <lightning-layout-item  size="6">
+                 <lightning-card title="Update Respective Record">
+                    <div class="slds-m-around_medium">
+                    <lightning-input label="Amount" onchange={handleChange} value={Amount2}  class="slds-m-bottom_x-small"></lightning-input>
+                    <lightning-button label="Update Record" variant="success" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </div> 
+                </lightning-card>
+                
+            </lightning-layout-item>
+        </lightning-layout>
+
+   
+   
+</template>

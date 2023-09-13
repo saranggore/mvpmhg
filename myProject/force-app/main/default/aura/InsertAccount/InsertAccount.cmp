@@ -1,0 +1,7 @@
+<aura:component controller="AccInsert">
+    <aura:registerEvent name="Mayu" type="c:SensAccountName"/>
+    <aura:attribute name="Accnames" type="string"/>
+    <lightning:input name="Account Name" type="string" value="{!v.Accnames}"/>
+    <lightning:button label="SAVE" onclick="{!c.create}"/> 
+    
+</aura:component>

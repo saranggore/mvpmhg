@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="Calling child Method From parent">
+        <lightning-input label="Enter the value" value={percentage} onkeyup={handle}></lightning-input>
+        <lightning-button label="Reset" onclick={resetValue1}></lightning-button>
+        <c-child4 message={percentage}></c-child4>
+    </lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<apex:page standardController="Account" recordSetVar="iteams" >
+   <apex:form >
+    <apex:sectionHeader title="Locations"/>
+       <apex:pageBlock title="Mayur">
+       <apex:pageBlockButtons location="top">
+           <apex:commandButton value="Add opportunity"/>
+           </apex:pageBlockButtons>
+       <apex:pageBlockTable value="{!iteams}" var="a">
+           <apex:outputfield value="{!a.Name}" /><br/><br/>
+           <apex:inputfield value="{!a.Phone}" /><br/>
+         </apex:pageBlockTable>  
+       </apex:pageBlock>
+    </apex:form>
+</apex:page>

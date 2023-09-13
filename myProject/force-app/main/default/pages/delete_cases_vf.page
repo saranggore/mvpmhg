@@ -1,0 +1,13 @@
+<apex:page standardController="case" extensions="delete_cases" recordSetVar="item" action="{!callMe}">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Delete" action="{!callMe}"/>
+        </apex:pageBlockButtons>
+        <apex:dataTable value="{!cases}" var="a" rules="rows" width="600" cellpadding="10" border="box" >
+      
+            
+        </apex:dataTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,10 @@
+<aura:component >
+<lightning:layout>
+<lightning:layoutItem padding="around-small" size="4">
+    <c:oppEvent_one/>
+</lightning:layoutItem> 
+<lightning:layoutItem padding="around-small" size="4">
+     <c:oppEvent_two/>
+</lightning:layoutItem> 
+</lightning:layout>	
+</aura:component>

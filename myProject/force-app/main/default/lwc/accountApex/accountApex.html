@@ -1,0 +1,17 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-05-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Show Account Data" >
+        <template for:each={accountData} for:item="items">
+           <div key={items.id}>
+            <p>  Name: {items.Name}  </p> 
+             <p> Type: {items.Type} </p> 
+           </div>
+        </template>
+    </lightning-card>
+</template>

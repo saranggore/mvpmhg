@@ -1,0 +1,10 @@
+<apex:page controller="dev1" >
+<apex:pageblock title="Contact">
+    <apex:pageBlockTable value="{!contacts}" var="a">
+        <apex:column value="{!a.Name}"/>
+        <apex:column value="{!a.Fax}"/>
+        <apex:column value="{!a.Phone}"/>
+        <apex:column value="{!a.email}"/>
+    </apex:pageBlockTable>
+    </apex:pageblock>
+    </apex:page>

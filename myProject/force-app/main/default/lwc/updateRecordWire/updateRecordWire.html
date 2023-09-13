@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Update Record Using Wire">
+      <template if:true={contacts} >
+        <lightning-input label="Id" name="Id" value={contacts.Id} onchange={handleChange} class="slds-p-around_medium"></lightning-input>
+        <lightning-input label="Name" name="Name" value={contacts.Name} onchange={handleChange} class="slds-p-around_medium"></lightning-input>
+        <lightning-input label="Email" name="Email" value={contacts.Email} onchange={handleChange} class="slds-p-around_medium"></lightning-input>
+    <lightning-button label="Update Record" onclick={updateRecord} ></lightning-button> 
+    </template>
+       
+        </lightning-card>
+</template>

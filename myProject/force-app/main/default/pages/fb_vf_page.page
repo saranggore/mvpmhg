@@ -1,0 +1,13 @@
+<apex:page controller="fb_integration" >
+    <apex:form >
+    <apex:page >
+        <apex:pageBlock >
+        <apex:pageBlockButtons location="top">
+            <apex:commandButton value="Access Token" action="{!invoke}"/>
+            </apex:pageBlockButtons>
+        
+        </apex:pageBlock>
+        
+        </apex:page>
+    </apex:form>
+</apex:page>

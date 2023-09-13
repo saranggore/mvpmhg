@@ -1,0 +1,15 @@
+<apex:page standardController="Opportunity" recordSetVar="iteam">
+    <style>
+    .header{background:#74992e;}
+    .even{background:#FF0000;}
+    .odd{background:#800000;}
+    </style>
+    <apex:dataTable value="{!iteam}" var="a" width="100" cellpadding="10"  border="box" rows="10"  headerClass="header" rowClasses="odd,even">
+        <apex:column headervalue="Name" value="{!a.Name}" />
+         <apex:column headervalue="Amount" value="{!a.Amount}" />
+         <apex:column headervalue="stageName" value="{!a.Stagename}" />
+        <apex:column headervalue="closeDate" value="{!a.CloseDate}" />
+        <apex:column headervalue="probability" value="{!a.probability}" />
+         
+    </apex:dataTable>
+</apex:page>

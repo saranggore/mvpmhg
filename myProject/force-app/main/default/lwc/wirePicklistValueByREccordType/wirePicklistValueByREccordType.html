@@ -1,0 +1,22 @@
+<template>
+    <Lightning-card title="PIcklist values of field">
+        <lightning-combobox
+        name="Rating"
+        label="Rating"
+        value={selectedRating}
+        placeholder="Select Rating"
+        options={industryOptions}
+        onchange={handleChange} ></lightning-combobox>
+<p>Selected Industry:{selectedIndustry}</p>
+    </Lightning-card>
+    <Lightning-card title="PIcklist values of field">
+        <lightning-combobox
+        name="Industry"
+        label="Industry"
+        value={selectedIndustry}
+        placeholder="Select Industry"
+        options={industryOptionss}
+        onchange={handleChange} ></lightning-combobox>
+<p>Selected Industry:{selectedIndustry}</p>
+    </Lightning-card>
+</template>

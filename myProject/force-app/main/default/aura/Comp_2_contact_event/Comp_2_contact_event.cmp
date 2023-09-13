@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:handler name="mayur" event="c:contact_event" action="{!c.create2}"/>
+    <aura:attribute name="accounts" type="string" />
+    <c:Comp_1_contact_event/>
+    <lightning:card title="Passed Data">
+    New COntact:{!v.accounts}
+    </lightning:card>
+</aura:component>
